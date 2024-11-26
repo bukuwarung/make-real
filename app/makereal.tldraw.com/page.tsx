@@ -15,6 +15,7 @@ import { CustomTopPanel } from '../components/CustomTopPanel'
 import { Links } from '../components/Links'
 import { SettingsDialog } from '../components/SettingsDialog'
 import { applySettingsMigrations, makeRealSettings, PROVIDERS } from '../lib/settings'
+import { WebEditorFrameShapeUtil } from '../WebEditorFrameShape/WebEditorFrameShape'
 
 debugEnableLicensing()
 
@@ -22,7 +23,7 @@ const Tldraw = dynamic(async () => (await import('tldraw')).Tldraw, {
 	ssr: false,
 })
 
-const shapeUtils = [PreviewShapeUtil]
+const shapeUtils = [PreviewShapeUtil, WebEditorFrameShapeUtil]
 const components = {
 	SharePanel: () => <MakeRealButton />,
 	MainMenu: () => (

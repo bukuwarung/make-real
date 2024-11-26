@@ -1,7 +1,7 @@
 import { Analytics } from '@vercel/analytics/react'
+import 'antd/dist/reset.css'
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
-import 'antd/dist/reset.css'
 import './globals.css'
 
 const TITLE = 'make real • tldraw'
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
 	],
 }
 
-const roboto = Roboto({ subsets: ['latin'], weight: ['400', '700'] })
+const roboto = Roboto({ subsets: ['latin'], weight: ['400', '700'], variable: '--font-roboto' })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
@@ -76,6 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					name="viewport"
 					content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
 				/>
+				<style>{`:root { --font-roboto: ${roboto.style.fontFamily}, sans-serif; } html, body * { font-family: var(--font-roboto) !important; }`}</style>
 			</head>
 			<body className={roboto.className}>
 				{children}
