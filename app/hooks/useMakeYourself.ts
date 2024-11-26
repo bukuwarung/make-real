@@ -11,7 +11,7 @@ import { htmlify } from '../lib/htmlify'
 import { PROVIDERS, makeRealSettings } from '../lib/settings'
 import { uploadLink } from '../lib/uploadLink'
 
-export function useMakeReal() {
+export function useMakeYourself() {
 	const editor = useEditor()
 	const { addToast } = useToasts()
 	const { addDialog } = useDialogs()

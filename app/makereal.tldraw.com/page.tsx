@@ -11,6 +11,7 @@ import { PreviewShapeUtil } from '../PreviewShape/PreviewShape'
 
 import { useEffect } from 'react'
 import { debugEnableLicensing, DefaultMainMenu, DefaultMainMenuContent, useDialogs } from 'tldraw'
+import { CustomTopPanel } from '../components/CustomTopPanel'
 import { Links } from '../components/Links'
 import { SettingsDialog } from '../components/SettingsDialog'
 import { applySettingsMigrations, makeRealSettings, PROVIDERS } from '../lib/settings'
@@ -30,6 +31,7 @@ const components = {
 			<Links />
 		</DefaultMainMenu>
 	),
+	TopPanel: () => <CustomTopPanel />,
 }
 
 export default function Home() {

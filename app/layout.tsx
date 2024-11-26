@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Roboto } from 'next/font/google'
+import 'antd/dist/reset.css'
 import './globals.css'
 
 const TITLE = 'make real • tldraw'
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
 	],
 }
 
-const inter = Inter({ subsets: ['latin'] })
+const roboto = Roboto({ subsets: ['latin'], weight: ['400', '700'] })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
@@ -76,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
 				/>
 			</head>
-			<body className={inter.className}>
+			<body className={roboto.className}>
 				{children}
 				<Analytics />
 			</body>

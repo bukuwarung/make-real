@@ -9,7 +9,7 @@ export function LinkLockupLink() {
 			href="https://twitter.com/tldraw"
 			onClick={() => track('lockup_clicked', { timestamp: Date.now() })}
 		>
-			<img alt="tldraw logo" className="lockup" src="/lockup.svg" />
+			<img alt="tldraw logo" className="lockup" src="/lockup.svg"  />
 		</a>
 	)
 }
