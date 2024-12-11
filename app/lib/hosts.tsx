@@ -8,7 +8,7 @@ const env =
 export const LINK_HOST = {
 	production: 'makereal.tldraw.link',
 	preview: `link---${process.env.NEXT_PUBLIC_VERCEL_URL}`,
-	development: 'makereal-link.localhost:3000',
+	development: 'makereal-link.localhost:3939',
 }[env]
 
 export const APP_HOST = {

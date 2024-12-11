@@ -1,0 +1,6398 @@
+{
+    "Accordion": {
+      "props": {
+        "accordion": {
+          "type": "boolean",
+          "description": "If true, Collapse renders as Accordion",
+          "defaultValue": null
+        },
+        "activeKey": {
+          "type": "string | number | (string | number)[]",
+          "description": "Key of the active panel",
+          "defaultValue": null
+        },
+        "defaultActiveKey": {
+          "type": "string | number | (string | number)[]",
+          "description": "Key of the initial active panel",
+          "defaultValue": null
+        },
+        "ghost": {
+          "type": "boolean",
+          "description": "Make the collapse borderless and its background transparent",
+          "defaultValue": null
+        },
+        "items": {
+          "type": "ItemType[]",
+          "description": "collapse items content",
+          "defaultValue": null
+        },
+        "onChange": {
+          "type": "(key: string | string[]) => void",
+          "description": "Callback function executed when active panel is changed",
+          "defaultValue": null
+        }
+      }
+    },
+    "Alert": {
+      "props": {
+        "message": {
+          "type": "any",
+          "description": "Alert component message",
+          "defaultValue": null
+        },
+        "type": {
+          "type": "\"success\" | \"warning\" | \"error\" | \"info\"",
+          "description": "Alert component type",
+          "defaultValue": "info"
+        },
+        "showIcon": {
+          "type": "boolean",
+          "description": "(Optional) Icon flag for Alert Component",
+          "defaultValue": "true"
+        },
+        "closable": {
+          "type": "boolean",
+          "description": "(Optional) closable flag for Alert Component",
+          "defaultValue": "false"
+        },
+        "buttonElement": {
+          "type": "React.ReactElement",
+          "description": "(Optional) Custom render button",
+          "defaultValue": null
+        },
+        "buttonType": {
+          "type": "\"text\" | \"block\"",
+          "description": "(Optional) Button type",
+          "defaultValue": "text"
+        },
+        "buttonLabel": {
+          "type": "string",
+          "description": "(Optional) Button text, will act as flag also",
+          "defaultValue": null
+        },
+        "onClickButton": {
+          "type": "() => void",
+          "description": "(Optional) Button click handler",
+          "defaultValue": null
+        },
+        "onClose": {
+          "type": "() => void",
+          "description": "(Optional) Callback on alert close",
+          "defaultValue": null
+        }
+      }
+    },
+    "Avatar": {
+      "props": {
+        "shape": {
+          "type": "\"circle\" | \"square\"",
+          "description": "Shape of avatar, options: `circle`, `square`",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "AvatarSize",
+          "description": "",
+          "defaultValue": null
+        },
+        "gap": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "src": {
+          "type": "ReactNode",
+          "description": "Src of image avatar",
+          "defaultValue": null
+        },
+        "srcSet": {
+          "type": "string",
+          "description": "Srcset of image avatar",
+          "defaultValue": null
+        },
+        "draggable": {
+          "type": "boolean | \"true\" | \"false\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "icon": {
+          "type": "ReactNode",
+          "description": "Icon to be used in avatar",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "alt": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "crossOrigin": {
+          "type": "\"\" | \"anonymous\" | \"use-credentials\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "onError": {
+          "type": "() => boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "key": {
+          "type": "Key",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "Badge": {
+      "props": {
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "color": {
+          "type": "\"red\" | \"blue\" | \"green\" | \"amber\" | \"gray\"",
+          "description": "",
+          "defaultValue": "red"
+        },
+        "value": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "tonal": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": "false"
+        }
+      }
+    },
+    "Button": {
+      "props": {
+        "block": {
+          "type": "boolean",
+          "description": "To fit button width to its parent width",
+          "defaultValue": "false"
+        },
+        "children": {
+          "type": "string",
+          "description": "Button text",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "Extens classname",
+          "defaultValue": ""
+        },
+        "danger": {
+          "type": "boolean",
+          "description": "Danger state",
+          "defaultValue": "false"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Disabled state",
+          "defaultValue": "false"
+        },
+        "href": {
+          "type": "string",
+          "description": "Redirect url of link button",
+          "defaultValue": null
+        },
+        "icon": {
+          "type": "\"\" | \"activity-outline\" | \"airplaine-outline\" | \"alert-circle-outline\" | \"alert-octagon-outline\" | \"alert-triangle-outline\" | \"align-center-outline\" | \"align-justify-outline\" | ... 303 more ... | \"zoom-out-outline\"",
+          "description": "Icon name. Will be ignored if empty",
+          "defaultValue": ""
+        },
+        "iconProps": {
+          "type": "IconProps",
+          "description": "Icon properties. Will be ignored if empty",
+          "defaultValue": "{\n\t\twidth: 20,\n\t}"
+        },
+        "loading": {
+          "type": "boolean",
+          "description": "Loading state",
+          "defaultValue": "false"
+        },
+        "size": {
+          "type": "SizeType",
+          "description": "Button size",
+          "defaultValue": "middle"
+        },
+        "target": {
+          "type": "any",
+          "description": "Same as target attribute of a, works when href is specified",
+          "defaultValue": null
+        },
+        "theme": {
+          "type": "\"desktop\" | \"mobile\"",
+          "description": "Theme color",
+          "defaultValue": "desktop"
+        },
+        "type": {
+          "type": "\"dashed\" | \"link\" | \"text\" | \"filled\" | \"outlined-primary\" | \"outlined-secondary\"",
+          "description": "Type of button",
+          "defaultValue": "filled"
+        },
+        "onClick": {
+          "type": "any",
+          "description": "On click button handler",
+          "defaultValue": null
+        }
+      }
+    },
+    "Card": {
+      "props": {
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "title": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "extra": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "bordered": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "headStyle": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "bodyStyle": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "loading": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "hoverable": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "CardSize",
+          "description": "",
+          "defaultValue": null
+        },
+        "type": {
+          "type": "\"inner\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "cover": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "actions": {
+          "type": "ReactNode[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "tabList": {
+          "type": "CardTabListType[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "tabBarExtraContent": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "onTabChange": {
+          "type": "(key: string) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "activeTabKey": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultActiveTabKey": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "tabProps": {
+          "type": "TabsProps",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultChecked": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "string | number | readonly string[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressContentEditableWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressHydrationWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "accessKey": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "contentEditable": {
+          "type": "Booleanish | \"inherit\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "contextMenu": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "dir": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "draggable": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "lang": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "nonce": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "slot": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "spellCheck": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "tabIndex": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "translate": {
+          "type": "\"yes\" | \"no\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "radioGroup": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "role": {
+          "type": "AriaRole",
+          "description": "",
+          "defaultValue": null
+        },
+        "about": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "content": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "datatype": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "inlist": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefix": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "property": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rel": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "resource": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rev": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "typeof": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "vocab": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCapitalize": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCorrect": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoSave": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "color": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemProp": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemScope": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemType": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemID": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemRef": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "results": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "security": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "unselectable": {
+          "type": "\"on\" | \"off\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "inputMode": {
+          "type": "\"none\" | \"search\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"numeric\" | \"decimal\"",
+          "description": "Hints at the type of data that might be entered by the user while editing the element or its contents\n@see https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute",
+          "defaultValue": null
+        },
+        "is": {
+          "type": "string",
+          "description": "Specify that a standard HTML element should behave like a defined custom built-in element\n@see https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is",
+          "defaultValue": null
+        },
+        "key": {
+          "type": "Key",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "CardWrapper": {
+      "props": {
+        "padding": {
+          "type": "string",
+          "description": "",
+          "defaultValue": "SIZE.sizeLG"
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": ""
+        },
+        "flexDirection": {
+          "type": "FlexDirection",
+          "description": "",
+          "defaultValue": "row"
+        },
+        "boxShadow": {
+          "type": "string",
+          "description": "",
+          "defaultValue": "CONFIG.elevation.boxShadow"
+        },
+        "border": {
+          "type": "string",
+          "description": "",
+          "defaultValue": "none"
+        },
+        "borderRadius": {
+          "type": "string",
+          "description": "",
+          "defaultValue": "SIZE.sizeSM"
+        },
+        "width": {
+          "type": "string",
+          "description": "",
+          "defaultValue": "fit-content"
+        }
+      }
+    },
+    "Checkbox": {
+      "props": {
+        "id": {
+          "type": "string",
+          "description": "Id",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "If get focus when component mounted",
+          "defaultValue": null
+        },
+        "checked": {
+          "type": "boolean",
+          "description": "Specifies whether the checkbox is selected",
+          "defaultValue": null
+        },
+        "children": {
+          "type": "string | Element",
+          "description": "label or jsx node",
+          "defaultValue": "Checkbox Label"
+        },
+        "className": {
+          "type": "string",
+          "description": "class name to be applied to the checkbox",
+          "defaultValue": "custom-checkbox"
+        },
+        "defaultChecked": {
+          "type": "boolean",
+          "description": "Specifies the initial state: whether or not the checkbox is selected",
+          "defaultValue": null
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "If disable checkbox",
+          "defaultValue": null
+        },
+        "indeterminate": {
+          "type": "boolean",
+          "description": "The indeterminate checked state of checkbox",
+          "defaultValue": null
+        },
+        "onChange": {
+          "type": "(value: boolean) => void",
+          "description": "The callback function that is triggered when the state changes",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "\"sm\" | \"lg\"",
+          "description": "size of checkbox",
+          "defaultValue": "lg"
+        }
+      }
+    },
+    "Col": {
+      "props": {
+        "flex": {
+          "type": "FlexType",
+          "description": "",
+          "defaultValue": null
+        },
+        "span": {
+          "type": "ColSpanType",
+          "description": "",
+          "defaultValue": null
+        },
+        "order": {
+          "type": "ColSpanType",
+          "description": "",
+          "defaultValue": null
+        },
+        "offset": {
+          "type": "ColSpanType",
+          "description": "",
+          "defaultValue": null
+        },
+        "push": {
+          "type": "ColSpanType",
+          "description": "",
+          "defaultValue": null
+        },
+        "pull": {
+          "type": "ColSpanType",
+          "description": "",
+          "defaultValue": null
+        },
+        "xs": {
+          "type": "ColSpanType | ColSize",
+          "description": "",
+          "defaultValue": null
+        },
+        "sm": {
+          "type": "ColSpanType | ColSize",
+          "description": "",
+          "defaultValue": null
+        },
+        "md": {
+          "type": "ColSpanType | ColSize",
+          "description": "",
+          "defaultValue": null
+        },
+        "lg": {
+          "type": "ColSpanType | ColSize",
+          "description": "",
+          "defaultValue": null
+        },
+        "xl": {
+          "type": "ColSpanType | ColSize",
+          "description": "",
+          "defaultValue": null
+        },
+        "xxl": {
+          "type": "ColSpanType | ColSize",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultChecked": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "string | number | readonly string[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressContentEditableWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressHydrationWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "accessKey": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "contentEditable": {
+          "type": "Booleanish | \"inherit\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "contextMenu": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "dir": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "draggable": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "lang": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "nonce": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "slot": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "spellCheck": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "tabIndex": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "title": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "translate": {
+          "type": "\"yes\" | \"no\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "radioGroup": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "role": {
+          "type": "AriaRole",
+          "description": "",
+          "defaultValue": null
+        },
+        "about": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "content": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "datatype": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "inlist": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefix": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "property": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rel": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "resource": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rev": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "typeof": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "vocab": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCapitalize": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCorrect": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoSave": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "color": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemProp": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemScope": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemType": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemID": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemRef": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "results": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "security": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "unselectable": {
+          "type": "\"on\" | \"off\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "inputMode": {
+          "type": "\"none\" | \"search\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"numeric\" | \"decimal\"",
+          "description": "Hints at the type of data that might be entered by the user while editing the element or its contents\n@see https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute",
+          "defaultValue": null
+        },
+        "is": {
+          "type": "string",
+          "description": "Specify that a standard HTML element should behave like a defined custom built-in element\n@see https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is",
+          "defaultValue": null
+        },
+        "key": {
+          "type": "Key",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "DatePicker": {
+      "props": {
+        "allowClear": {
+          "type": "boolean | { clearIcon?: ReactNode; }",
+          "description": "Whether to show clear button",
+          "defaultValue": "true"
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "If get focus when component mounted",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "The picker className",
+          "defaultValue": null
+        },
+        "changeOnBlur": {
+          "type": "boolean",
+          "description": "Trigger change when blur. e.g. datetime picker no need click confirm button",
+          "defaultValue": null
+        },
+        "defaultPickerValue": {
+          "type": "Dayjs",
+          "description": "To set default picker date",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "Dayjs",
+          "description": "To set default date, if start time or end time is null or undefined, the date range will be an open interval",
+          "defaultValue": null
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Determine whether the DatePicker is disabled",
+          "defaultValue": null
+        },
+        "disableFutureDate": {
+          "type": "boolean",
+          "description": "Set future date to be not selected",
+          "defaultValue": "true"
+        },
+        "format": {
+          "type": "string | CustomFormat<Dayjs> | (string | CustomFormat<Dayjs>)[]",
+          "description": "To set the date format, support multi-format matching when it is an array, display the first one shall prevail. refer to dayjs#format. for example: Custom Format",
+          "defaultValue": "DD/MM/YYYY"
+        },
+        "popupClassName": {
+          "type": "string",
+          "description": "To customize the className of the popup calendar",
+          "defaultValue": null
+        },
+        "open": {
+          "type": "boolean",
+          "description": "The open state of picker",
+          "defaultValue": null
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "The placeholder of date input",
+          "defaultValue": "dd/mm/yyyy"
+        },
+        "placement": {
+          "type": "\"bottomLeft\" | \"bottomRight\" | \"topLeft\" | \"topRight\"",
+          "description": "The position where the selection box pops up",
+          "defaultValue": null
+        },
+        "showToday": {
+          "type": "boolean",
+          "description": "Whether to show Today button",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "\"sm\" | \"lg\"",
+          "description": "Size of the input box,",
+          "defaultValue": "lg"
+        },
+        "status": {
+          "type": "\"\" | \"error\"",
+          "description": "Set validation status",
+          "defaultValue": null
+        },
+        "width": {
+          "type": "number",
+          "description": "Width for picker",
+          "defaultValue": "160"
+        },
+        "value": {
+          "type": "Dayjs",
+          "description": "To set date value",
+          "defaultValue": null
+        },
+        "onChange": {
+          "type": "(value: Dayjs, dateString: string) => void",
+          "description": "Callback function, can be executed when the selected time is changing",
+          "defaultValue": null
+        },
+        "onOk": {
+          "type": "(date: Dayjs) => void",
+          "description": "*\nCallback when click ok button",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "The ID for input",
+          "defaultValue": null
+        },
+        "help": {
+          "type": "string",
+          "description": "Description of the input",
+          "defaultValue": null
+        },
+        "label": {
+          "type": "string",
+          "description": "label of the input",
+          "defaultValue": null
+        },
+        "onInfoIconClick": {
+          "type": "() => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "showOptionalText": {
+          "type": "boolean",
+          "description": "show optional text along with label",
+          "defaultValue": null
+        },
+        "showInfoIcon": {
+          "type": "boolean",
+          "description": "show info icon along with label",
+          "defaultValue": null
+        }
+      }
+    },
+    "DateRangePicker": {
+      "props": {
+        "id": {
+          "type": "string",
+          "description": "The ID for input",
+          "defaultValue": null
+        },
+        "allowClear": {
+          "type": "boolean | { clearIcon?: ReactNode; }",
+          "description": "",
+          "defaultValue": "true"
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "changeOnBlur": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultPickerValue": {
+          "type": "[Dayjs, Dayjs]",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "RangeValue<Dayjs>",
+          "description": "",
+          "defaultValue": null
+        },
+        "disabled": {
+          "type": "boolean | [boolean, boolean]",
+          "description": "",
+          "defaultValue": null
+        },
+        "disableFutureDate": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": "true"
+        },
+        "format": {
+          "type": "string | CustomFormat<Dayjs> | (string | CustomFormat<Dayjs>)[]",
+          "description": "",
+          "defaultValue": "DD/MM/YYYY"
+        },
+        "popupClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "open": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "placeholder": {
+          "type": "[string, string]",
+          "description": "",
+          "defaultValue": null
+        },
+        "placement": {
+          "type": "\"bottomLeft\" | \"bottomRight\" | \"topLeft\" | \"topRight\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "showToday": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "\"sm\" | \"lg\"",
+          "description": "",
+          "defaultValue": "lg"
+        },
+        "status": {
+          "type": "\"\" | \"error\"",
+          "description": "Set validation status",
+          "defaultValue": null
+        },
+        "width": {
+          "type": "number",
+          "description": "",
+          "defaultValue": "320"
+        },
+        "value": {
+          "type": "RangeValue<Dayjs>",
+          "description": "",
+          "defaultValue": null
+        },
+        "onChange": {
+          "type": "(values: RangeValue<Dayjs>, formatString: [string, string]) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "onOk": {
+          "type": "(dates: RangeValue<Dayjs>) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "help": {
+          "type": "string",
+          "description": "Description of the input",
+          "defaultValue": null
+        },
+        "label": {
+          "type": "string",
+          "description": "label of the input",
+          "defaultValue": null
+        },
+        "onInfoIconClick": {
+          "type": "() => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "showOptionalText": {
+          "type": "boolean",
+          "description": "show optional text along with label",
+          "defaultValue": null
+        },
+        "showInfoIcon": {
+          "type": "boolean",
+          "description": "show info icon along with label",
+          "defaultValue": null
+        }
+      }
+    },
+    "Descriptions": {
+      "props": {
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "bordered": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "\"middle\" | \"small\" | \"default\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "@deprecated use `items` instead",
+          "defaultValue": null
+        },
+        "title": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "extra": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "column": {
+          "type": "number | Partial<Record<Breakpoint, number>>",
+          "description": "",
+          "defaultValue": null
+        },
+        "layout": {
+          "type": "\"horizontal\" | \"vertical\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "colon": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "labelStyle": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "contentStyle": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "items": {
+          "type": "DescriptionsItemType[]",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "Divider": {
+      "props": {
+        "className": {
+          "type": "string",
+          "description": "class name to be applied to the divider",
+          "defaultValue": null
+        },
+        "dashed": {
+          "type": "boolean",
+          "description": "Whether line is dashed",
+          "defaultValue": "false"
+        },
+        "type": {
+          "type": "\"horizontal\" | \"vertical\"",
+          "description": "The direction type of divider",
+          "defaultValue": "horizontal"
+        }
+      }
+    },
+    "Dropdown": {
+      "props": {
+        "menu": {
+          "type": "MenuProps",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "arrow": {
+          "type": "boolean | DropdownArrowOptions",
+          "description": "",
+          "defaultValue": null
+        },
+        "trigger": {
+          "type": "(\"click\" | \"hover\" | \"contextMenu\")[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "dropdownRender": {
+          "type": "(originNode: ReactNode) => ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "onOpenChange": {
+          "type": "(open: boolean) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "open": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "destroyPopupOnHide": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "align": {
+          "type": "Align",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "transitionName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "placement": {
+          "type": "\"topLeft\" | \"topCenter\" | \"topRight\" | \"bottomLeft\" | \"bottomCenter\" | \"bottomRight\" | \"top\" | \"bottom\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "overlayClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "overlayStyle": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "forceRender": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "mouseEnterDelay": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "mouseLeaveDelay": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "openClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoAdjustOverflow": {
+          "type": "boolean | AdjustOverflow",
+          "description": "",
+          "defaultValue": null
+        },
+        "overlay": {
+          "type": "ReactElement<any, string | JSXElementConstructor<any>> | OverlayFunc",
+          "description": "@deprecated Please use `menu` instead",
+          "defaultValue": null
+        },
+        "visible": {
+          "type": "boolean",
+          "description": "@deprecated Please use `open` instead",
+          "defaultValue": null
+        },
+        "onVisibleChange": {
+          "type": "(open: boolean) => void",
+          "description": "@deprecated Please use `onOpenChange` instead",
+          "defaultValue": null
+        }
+      }
+    },
+    "Empty": {
+      "props": {
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "imageStyle": {
+          "type": "CSSProperties",
+          "description": "@since 3.16.0",
+          "defaultValue": null
+        },
+        "image": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "description": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "Icon": {
+      "props": {
+        "name": {
+          "type": "\"\" | \"activity-outline\" | \"airplaine-outline\" | \"alert-circle-outline\" | \"alert-octagon-outline\" | \"alert-triangle-outline\" | \"align-center-outline\" | \"align-justify-outline\" | ... 303 more ... | \"zoom-out-outline\"",
+          "description": "Icon name",
+          "defaultValue": ""
+        },
+        "size": {
+          "type": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\"",
+          "description": "Size of icons",
+          "defaultValue": "md"
+        },
+        "color": {
+          "type": "string",
+          "description": "Icon color",
+          "defaultValue": "CONFIG.color.icon.colorIconPrimary"
+        },
+        "hoverColor": {
+          "type": "string",
+          "description": "Icon hover color",
+          "defaultValue": "CONFIG.color.icon.colorIconPrimary"
+        },
+        "width": {
+          "type": "number",
+          "description": "Custom icon width",
+          "defaultValue": null
+        },
+        "height": {
+          "type": "number",
+          "description": "Custom icon height",
+          "defaultValue": null
+        },
+        "useCurrentColor": {
+          "type": "boolean",
+          "description": "Use current color",
+          "defaultValue": "false"
+        },
+        "onClick": {
+          "type": "() => void",
+          "description": "Optional on click event",
+          "defaultValue": null
+        }
+      }
+    },
+    "Image": {
+      "props": {
+        "src": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "wrapperClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "wrapperStyle": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "previewPrefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "placeholder": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "fallback": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "preview": {
+          "type": "boolean | ImagePreviewType",
+          "description": "",
+          "defaultValue": null
+        },
+        "onPreviewClose": {
+          "type": "(value: boolean, prevValue: boolean) => void",
+          "description": "@deprecated since version 3.2.1",
+          "defaultValue": null
+        },
+        "alt": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "crossOrigin": {
+          "type": "\"\" | \"anonymous\" | \"use-credentials\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "decoding": {
+          "type": "\"async\" | \"auto\" | \"sync\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "height": {
+          "type": "string | number",
+          "description": "",
+          "defaultValue": null
+        },
+        "loading": {
+          "type": "\"eager\" | \"lazy\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "sizes": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "srcSet": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "useMap": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "width": {
+          "type": "string | number",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultChecked": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "string | number | readonly string[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressContentEditableWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressHydrationWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "accessKey": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "contentEditable": {
+          "type": "Booleanish | \"inherit\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "contextMenu": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "dir": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "draggable": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "lang": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "nonce": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "slot": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "spellCheck": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "tabIndex": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "title": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "translate": {
+          "type": "\"yes\" | \"no\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "radioGroup": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "role": {
+          "type": "AriaRole",
+          "description": "",
+          "defaultValue": null
+        },
+        "about": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "content": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "datatype": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "inlist": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefix": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "property": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rel": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "resource": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rev": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "typeof": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "vocab": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCapitalize": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCorrect": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoSave": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "color": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemProp": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemScope": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemType": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemID": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemRef": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "results": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "security": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "unselectable": {
+          "type": "\"on\" | \"off\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "inputMode": {
+          "type": "\"none\" | \"search\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"numeric\" | \"decimal\"",
+          "description": "Hints at the type of data that might be entered by the user while editing the element or its contents\n@see https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute",
+          "defaultValue": null
+        },
+        "is": {
+          "type": "string",
+          "description": "Specify that a standard HTML element should behave like a defined custom built-in element\n@see https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is",
+          "defaultValue": null
+        }
+      }
+    },
+    "InputWrapper": {
+      "props": {
+        "id": {
+          "type": "string",
+          "description": "The ID for input",
+          "defaultValue": null
+        },
+        "help": {
+          "type": "string",
+          "description": "Description of the input",
+          "defaultValue": null
+        },
+        "label": {
+          "type": "string",
+          "description": "label of the input",
+          "defaultValue": null
+        },
+        "onInfoIconClick": {
+          "type": "() => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "showOptionalText": {
+          "type": "boolean",
+          "description": "show optional text along with label",
+          "defaultValue": null
+        },
+        "showInfoIcon": {
+          "type": "boolean",
+          "description": "show info icon along with label",
+          "defaultValue": null
+        },
+        "status": {
+          "type": "\"\" | \"error\"",
+          "description": "Set validation status",
+          "defaultValue": null
+        },
+        "children": {
+          "type": "Element",
+          "description": "Children",
+          "defaultValue": null
+        }
+      }
+    },
+    "TextArea": {
+      "props": {
+        "allowClear": {
+          "type": "boolean | { clearIcon?: ReactNode; }",
+          "description": "If allow to remove input content with clear icon",
+          "defaultValue": null
+        },
+        "autoSize": {
+          "type": "boolean | object",
+          "description": "Height autosize feature, can be set to true | false or an object { minRows: 2, maxRows: 6 }",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "Get focus by default",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "Semantic DOM class",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "string | number | readonly string[]",
+          "description": "The initial input content",
+          "defaultValue": null
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Whether the input is disabled",
+          "defaultValue": null
+        },
+        "maxLength": {
+          "type": "number",
+          "description": "The maximum number of characters in TextArea",
+          "defaultValue": null
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "Placeholder text in input",
+          "defaultValue": null
+        },
+        "ref": {
+          "type": "any",
+          "description": "ref to the input",
+          "defaultValue": null
+        },
+        "rows": {
+          "type": "number",
+          "description": "number of rows",
+          "defaultValue": null
+        },
+        "showCount": {
+          "type": "boolean",
+          "description": "Whether to show character count",
+          "defaultValue": null
+        },
+        "status": {
+          "type": "\"\" | \"error\"",
+          "description": "Set validation status",
+          "defaultValue": ""
+        },
+        "value": {
+          "type": "string | number | readonly string[]",
+          "description": "The input content value",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "InputSize",
+          "description": "Size of the input",
+          "defaultValue": "md"
+        },
+        "onChange": {
+          "type": "(value: string) => void",
+          "description": "Callback when user input",
+          "defaultValue": null
+        },
+        "onPressEnter": {
+          "type": "(e: any) => void",
+          "description": "The callback function that is triggered when Enter key is pressed",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "The ID for input",
+          "defaultValue": null
+        },
+        "help": {
+          "type": "string",
+          "description": "Description of the input",
+          "defaultValue": null
+        },
+        "label": {
+          "type": "string",
+          "description": "label of the input",
+          "defaultValue": null
+        },
+        "onInfoIconClick": {
+          "type": "() => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "showOptionalText": {
+          "type": "boolean",
+          "description": "show optional text along with label",
+          "defaultValue": null
+        },
+        "showInfoIcon": {
+          "type": "boolean",
+          "description": "show info icon along with label",
+          "defaultValue": null
+        }
+      }
+    },
+    "TextField": {
+      "props": {
+        "addonAfter": {
+          "type": "ReactNode",
+          "description": "The label text displayed after (on the right side of) the input field",
+          "defaultValue": null
+        },
+        "addonBefore": {
+          "type": "ReactNode",
+          "description": "The label text displayed before (on the left side of) the input field",
+          "defaultValue": null
+        },
+        "allowClear": {
+          "type": "boolean | { clearIcon?: ReactNode; }",
+          "description": "If allow to remove input content with clear icon",
+          "defaultValue": "false"
+        },
+        "autoComplete": {
+          "type": "string",
+          "description": "Autocomplete attributes help password managers to infer the purpose of a field in a form,\nFor more info: https://www.chromium.org/developers/design-documents/create-amazing-password-forms/",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "Get focus by default",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "Semantic DOM class",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "string | number | readonly string[]",
+          "description": "The initial input content",
+          "defaultValue": null
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Whether the input is disabled",
+          "defaultValue": null
+        },
+        "maxLength": {
+          "type": "number",
+          "description": "The maximum number of characters in Input",
+          "defaultValue": null
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "Placeholder text in input",
+          "defaultValue": null
+        },
+        "ref": {
+          "type": "any",
+          "description": "ref to the input",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "InputSize",
+          "description": "The size of the input box",
+          "defaultValue": "sm"
+        },
+        "type": {
+          "type": "\"number\" | \"text\" | \"email\" | \"password\" | \"search\"",
+          "description": "The type of input",
+          "defaultValue": "text"
+        },
+        "value": {
+          "type": "string | number | readonly string[]",
+          "description": "The input content value",
+          "defaultValue": null
+        },
+        "width": {
+          "type": "number",
+          "description": "The input content width",
+          "defaultValue": null
+        },
+        "onBlur": {
+          "type": "(value: string) => void",
+          "description": "Callback when user blur input field",
+          "defaultValue": null
+        },
+        "onChange": {
+          "type": "(value: string) => void",
+          "description": "Callback when user input",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "The ID for input",
+          "defaultValue": null
+        },
+        "help": {
+          "type": "string",
+          "description": "Description of the input",
+          "defaultValue": null
+        },
+        "label": {
+          "type": "string",
+          "description": "label of the input",
+          "defaultValue": null
+        },
+        "onInfoIconClick": {
+          "type": "() => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "showOptionalText": {
+          "type": "boolean",
+          "description": "show optional text along with label",
+          "defaultValue": null
+        },
+        "showInfoIcon": {
+          "type": "boolean",
+          "description": "show info icon along with label",
+          "defaultValue": null
+        },
+        "status": {
+          "type": "\"\" | \"error\"",
+          "description": "Set validation status",
+          "defaultValue": null
+        }
+      }
+    },
+    "List": {
+      "props": {
+        "bordered": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "dataSource": {
+          "type": "T[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "extra": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "grid": {
+          "type": "ListGridType",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemLayout": {
+          "type": "ListItemLayout",
+          "description": "",
+          "defaultValue": null
+        },
+        "loading": {
+          "type": "boolean | SpinProps",
+          "description": "",
+          "defaultValue": null
+        },
+        "loadMore": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "pagination": {
+          "type": "false | PaginationConfig",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rowKey": {
+          "type": "string | number | symbol | ((item: T) => Key)",
+          "description": "",
+          "defaultValue": null
+        },
+        "renderItem": {
+          "type": "(item: T, index: number) => ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "ListSize",
+          "description": "",
+          "defaultValue": null
+        },
+        "split": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "header": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "footer": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "locale": {
+          "type": "ListLocale",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "Loader": {
+      "props": {
+        "size": {
+          "type": "number",
+          "description": "size of loader",
+          "defaultValue": "36"
+        }
+      }
+    },
+    "Modal": {
+      "props": {
+        "afterClose": {
+          "type": "() => void",
+          "description": "Specifies a function to be called after the modal is closed.",
+          "defaultValue": null
+        },
+        "cancelButtonProps": {
+          "type": "ButtonProps",
+          "description": "Specifies the button props for the cancel button.",
+          "defaultValue": null
+        },
+        "cancelText": {
+          "type": "string",
+          "description": "Specifies the text for the cancel button.",
+          "defaultValue": null
+        },
+        "children": {
+          "type": "Element",
+          "description": "Specifies the content of the modal.",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "Specifies the class name for the modal container.",
+          "defaultValue": null
+        },
+        "footer": {
+          "type": "ReactNode",
+          "description": "Specifies the footer content of the modal.",
+          "defaultValue": null
+        },
+        "onCloseIcon": {
+          "type": "() => void",
+          "description": "Specifies the function to be called when the cancel icon is clicked.",
+          "defaultValue": null
+        },
+        "onCancel": {
+          "type": "() => void",
+          "description": "Specifies the function to be called when the cancel button is clicked.",
+          "defaultValue": null
+        },
+        "onOk": {
+          "type": "() => void",
+          "description": "Specifies the function to be called when the OK button is clicked.",
+          "defaultValue": null
+        },
+        "okText": {
+          "type": "string",
+          "description": "Specifies the text for the OK button.",
+          "defaultValue": null
+        },
+        "okButtonProps": {
+          "type": "ButtonProps",
+          "description": "Specifies the button props for the OK button.",
+          "defaultValue": null
+        },
+        "open": {
+          "type": "boolean",
+          "description": "Specifies whether the modal is open or closed.",
+          "defaultValue": null
+        },
+        "showCloseIcon": {
+          "type": "boolean",
+          "description": "Specifies whether to show the close icon in the modal header.",
+          "defaultValue": "true"
+        },
+        "size": {
+          "type": "\"sm\" | \"md\" | \"lg\" | \"xl\"",
+          "description": "Specifies the size of the modal.",
+          "defaultValue": "md"
+        },
+        "wrapClassName": {
+          "type": "string",
+          "description": "Specifies the class name for the modal wrapper.",
+          "defaultValue": null
+        },
+        "title": {
+          "type": "string",
+          "description": "Specifies title for modal.",
+          "defaultValue": null
+        },
+        "withPadding": {
+          "type": "boolean",
+          "description": "Specifies padding to modal contents",
+          "defaultValue": "true"
+        },
+        "additionalFooterButtons": {
+          "type": "Element",
+          "description": "Specifies additional footer buttons.",
+          "defaultValue": null
+        },
+        "showFooter": {
+          "type": "boolean",
+          "description": "Specifies whether to show the footer.",
+          "defaultValue": "true"
+        }
+      }
+    },
+    "Pagination": {
+      "props": {
+        "className": {
+          "type": "string",
+          "description": "Customized CSS class name for the pagination component.",
+          "defaultValue": ""
+        },
+        "current": {
+          "type": "number",
+          "description": "Current page number.",
+          "defaultValue": null
+        },
+        "defaultCurrent": {
+          "type": "number",
+          "description": "Default initial page number.",
+          "defaultValue": "1"
+        },
+        "defaultPageSize": {
+          "type": "number",
+          "description": "Default number of items per page.",
+          "defaultValue": "10"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Whether the pagination component is disabled.",
+          "defaultValue": null
+        },
+        "hideOnSinglePage": {
+          "type": "boolean",
+          "description": "Whether to hide the pagination component if there is only one page.",
+          "defaultValue": "true"
+        },
+        "onShowSizeChange": {
+          "type": "(current: number, size: number) => void",
+          "description": "Callback function that is executed when the page size is changed.",
+          "defaultValue": null
+        },
+        "pageSize": {
+          "type": "number",
+          "description": "Number of items per page.",
+          "defaultValue": "10"
+        },
+        "pageSizeOptions": {
+          "type": "string[] | number[]",
+          "description": "Size options for the page size selector.",
+          "defaultValue": "[10, 20, 50, 100]"
+        },
+        "showQuickJumper": {
+          "type": "boolean | { goButton?: ReactNode; }",
+          "description": "Whether to show quick navigation to jump to specific pages.",
+          "defaultValue": null
+        },
+        "showSizeChanger": {
+          "type": "boolean",
+          "description": "Whether to show the page size selector.",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "\"default\" | \"small\"",
+          "description": "Specify the size of Pagination",
+          "defaultValue": "small"
+        },
+        "total": {
+          "type": "number",
+          "description": "Total number of items.",
+          "defaultValue": null
+        },
+        "onChange": {
+          "type": "(page: number, pageSize: number) => void",
+          "description": "Callback function that is executed when the page number or page size is changed.",
+          "defaultValue": null
+        },
+        "responsive": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "role": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "totalBoundaryShowSizeChanger": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemRender": {
+          "type": "(page: number, type: \"page\" | \"prev\" | \"next\" | \"jump-prev\" | \"jump-next\", element: ReactNode) => ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "showTotal": {
+          "type": "(total: number, range: [number, number]) => ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "selectPrefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "showLessItems": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "showPrevNextJumpers": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "showTitle": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "simple": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "locale": {
+          "type": "PaginationLocale",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "selectComponentClass": {
+          "type": "ComponentType<{}>",
+          "description": "",
+          "defaultValue": null
+        },
+        "prevIcon": {
+          "type": "ReactNode | ComponentType<{}>",
+          "description": "",
+          "defaultValue": null
+        },
+        "nextIcon": {
+          "type": "ReactNode | ComponentType<{}>",
+          "description": "",
+          "defaultValue": null
+        },
+        "jumpPrevIcon": {
+          "type": "ReactNode | ComponentType<{}>",
+          "description": "",
+          "defaultValue": null
+        },
+        "jumpNextIcon": {
+          "type": "ReactNode | ComponentType<{}>",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "Popconfirm": {
+      "props": {
+        "title": {
+          "type": "ReactNode | RenderFunction",
+          "description": "",
+          "defaultValue": null
+        },
+        "description": {
+          "type": "ReactNode | RenderFunction",
+          "description": "",
+          "defaultValue": null
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "okText": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "okType": {
+          "type": "LegacyButtonType",
+          "description": "",
+          "defaultValue": null
+        },
+        "cancelText": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "okButtonProps": {
+          "type": "ButtonProps",
+          "description": "",
+          "defaultValue": null
+        },
+        "cancelButtonProps": {
+          "type": "ButtonProps",
+          "description": "",
+          "defaultValue": null
+        },
+        "showCancel": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "icon": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "color": {
+          "type": "LiteralUnion<PresetColorType>",
+          "description": "",
+          "defaultValue": null
+        },
+        "placement": {
+          "type": "TooltipPlacement",
+          "description": "",
+          "defaultValue": null
+        },
+        "builtinPlacements": {
+          "type": "BuildInPlacements",
+          "description": "",
+          "defaultValue": null
+        },
+        "openClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "arrowPointAtCenter": {
+          "type": "boolean",
+          "description": "@deprecated Please use `arrow={{ pointAtCenter: true }}` instead.",
+          "defaultValue": null
+        },
+        "arrow": {
+          "type": "boolean | { arrowPointAtCenter?: boolean; pointAtCenter?: boolean; }",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoAdjustOverflow": {
+          "type": "boolean | AdjustOverflow",
+          "description": "",
+          "defaultValue": null
+        },
+        "destroyTooltipOnHide": {
+          "type": "boolean | { keepParent?: boolean; }",
+          "description": "",
+          "defaultValue": null
+        },
+        "open": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultOpen": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "afterOpenChange": {
+          "type": "(visible: boolean) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "visible": {
+          "type": "boolean",
+          "description": "@deprecated Please use `open` instead.",
+          "defaultValue": null
+        },
+        "defaultVisible": {
+          "type": "boolean",
+          "description": "@deprecated Please use `defaultOpen` instead.",
+          "defaultValue": null
+        },
+        "onVisibleChange": {
+          "type": "(visible: boolean) => void",
+          "description": "@deprecated Please use `onOpenChange` instead.",
+          "defaultValue": null
+        },
+        "afterVisibleChange": {
+          "type": "(visible: boolean) => void",
+          "description": "@deprecated Please use `afterOpenChange` instead.",
+          "defaultValue": null
+        },
+        "trigger": {
+          "type": "ActionType | ActionType[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "transitionName": {
+          "type": "string",
+          "description": "@deprecated Use `motion` instead",
+          "defaultValue": null
+        },
+        "animation": {
+          "type": "string",
+          "description": "@deprecated Use `motion` instead",
+          "defaultValue": null
+        },
+        "motion": {
+          "type": "CSSMotionProps",
+          "description": "Config popup motion",
+          "defaultValue": null
+        },
+        "overlay": {
+          "type": "ReactNode | (() => ReactNode)",
+          "description": "",
+          "defaultValue": null
+        },
+        "overlayStyle": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "overlayClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "mouseEnterDelay": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "mouseLeaveDelay": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "align": {
+          "type": "AlignType",
+          "description": "",
+          "defaultValue": null
+        },
+        "showArrow": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "arrowContent": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "popupVisible": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "overlayInnerStyle": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "zIndex": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "Popover": {
+      "props": {
+        "title": {
+          "type": "ReactNode | RenderFunction",
+          "description": "",
+          "defaultValue": null
+        },
+        "content": {
+          "type": "ReactNode | RenderFunction",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "color": {
+          "type": "LiteralUnion<PresetColorType>",
+          "description": "",
+          "defaultValue": null
+        },
+        "placement": {
+          "type": "TooltipPlacement",
+          "description": "",
+          "defaultValue": null
+        },
+        "builtinPlacements": {
+          "type": "BuildInPlacements",
+          "description": "",
+          "defaultValue": null
+        },
+        "openClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "arrowPointAtCenter": {
+          "type": "boolean",
+          "description": "@deprecated Please use `arrow={{ pointAtCenter: true }}` instead.",
+          "defaultValue": null
+        },
+        "arrow": {
+          "type": "boolean | { arrowPointAtCenter?: boolean; pointAtCenter?: boolean; }",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoAdjustOverflow": {
+          "type": "boolean | AdjustOverflow",
+          "description": "",
+          "defaultValue": null
+        },
+        "destroyTooltipOnHide": {
+          "type": "boolean | { keepParent?: boolean; }",
+          "description": "",
+          "defaultValue": null
+        },
+        "open": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultOpen": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "onOpenChange": {
+          "type": "(visible: boolean) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "afterOpenChange": {
+          "type": "(visible: boolean) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "visible": {
+          "type": "boolean",
+          "description": "@deprecated Please use `open` instead.",
+          "defaultValue": null
+        },
+        "defaultVisible": {
+          "type": "boolean",
+          "description": "@deprecated Please use `defaultOpen` instead.",
+          "defaultValue": null
+        },
+        "onVisibleChange": {
+          "type": "(visible: boolean) => void",
+          "description": "@deprecated Please use `onOpenChange` instead.",
+          "defaultValue": null
+        },
+        "afterVisibleChange": {
+          "type": "(visible: boolean) => void",
+          "description": "@deprecated Please use `afterOpenChange` instead.",
+          "defaultValue": null
+        },
+        "trigger": {
+          "type": "ActionType | ActionType[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "transitionName": {
+          "type": "string",
+          "description": "@deprecated Use `motion` instead",
+          "defaultValue": null
+        },
+        "animation": {
+          "type": "string",
+          "description": "@deprecated Use `motion` instead",
+          "defaultValue": null
+        },
+        "motion": {
+          "type": "CSSMotionProps",
+          "description": "Config popup motion",
+          "defaultValue": null
+        },
+        "overlay": {
+          "type": "ReactNode | (() => ReactNode)",
+          "description": "",
+          "defaultValue": null
+        },
+        "overlayStyle": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "overlayClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "mouseEnterDelay": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "mouseLeaveDelay": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "align": {
+          "type": "AlignType",
+          "description": "",
+          "defaultValue": null
+        },
+        "showArrow": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "arrowContent": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "popupVisible": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "overlayInnerStyle": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "zIndex": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "ref": {
+          "type": "Ref<unknown>",
+          "description": "Allows getting a ref to the component instance.\nOnce the component unmounts, React will set `ref.current` to `null` (or call the ref with `null` if you passed a callback ref).\n@see https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom",
+          "defaultValue": null
+        },
+        "key": {
+          "type": "Key",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "RadioGroup": {
+      "props": {
+        "defaultValue": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "value": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "onChange": {
+          "type": "(e: RadioChangeEvent) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "SizeType",
+          "description": "",
+          "defaultValue": null
+        },
+        "disabled": {
+          "type": "DisabledType",
+          "description": "",
+          "defaultValue": null
+        },
+        "name": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "optionType": {
+          "type": "RadioGroupOptionType",
+          "description": "",
+          "defaultValue": null
+        },
+        "buttonStyle": {
+          "type": "RadioGroupButtonStyle",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "options": {
+          "type": "(string | number | CheckboxOptionType)[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "Radio": {
+      "props": {
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultChecked": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "checked": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "title": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "onChange": {
+          "type": "(e: RadioChangeEvent) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "value": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "tabIndex": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "name": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "type": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "skipGroup": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "Row": {
+      "props": {
+        "gutter": {
+          "type": "Gutter | [Gutter, Gutter]",
+          "description": "",
+          "defaultValue": null
+        },
+        "align": {
+          "type": "\"top\" | \"middle\" | \"bottom\" | \"stretch\" | ResponsiveAligns",
+          "description": "",
+          "defaultValue": null
+        },
+        "justify": {
+          "type": "\"start\" | \"end\" | \"center\" | \"space-around\" | \"space-between\" | \"space-evenly\" | ResponsiveJustify",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "wrap": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultChecked": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "string | number | readonly string[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressContentEditableWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressHydrationWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "accessKey": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "contentEditable": {
+          "type": "Booleanish | \"inherit\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "contextMenu": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "dir": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "draggable": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "lang": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "nonce": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "slot": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "spellCheck": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "tabIndex": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "title": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "translate": {
+          "type": "\"yes\" | \"no\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "radioGroup": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "role": {
+          "type": "AriaRole",
+          "description": "",
+          "defaultValue": null
+        },
+        "about": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "content": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "datatype": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "inlist": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefix": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "property": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rel": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "resource": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rev": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "typeof": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "vocab": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCapitalize": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCorrect": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoSave": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "color": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemProp": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemScope": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemType": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemID": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemRef": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "results": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "security": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "unselectable": {
+          "type": "\"on\" | \"off\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "inputMode": {
+          "type": "\"none\" | \"search\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"numeric\" | \"decimal\"",
+          "description": "Hints at the type of data that might be entered by the user while editing the element or its contents\n@see https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute",
+          "defaultValue": null
+        },
+        "is": {
+          "type": "string",
+          "description": "Specify that a standard HTML element should behave like a defined custom built-in element\n@see https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is",
+          "defaultValue": null
+        },
+        "key": {
+          "type": "Key",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "Select": {
+      "props": {
+        "allowClear": {
+          "type": "boolean | { clearIcon?: RenderNode; }",
+          "description": "Show clear button",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "Get focus by default",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "className",
+          "defaultValue": null
+        },
+        "defaultActiveFirstOption": {
+          "type": "boolean",
+          "description": "Whether active first option by default",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "any",
+          "description": "Initial selected option",
+          "defaultValue": null
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Whether disabled select",
+          "defaultValue": null
+        },
+        "dropdownRender": {
+          "type": "(menu: ReactElement<any, string | JSXElementConstructor<any>>) => ReactElement<any, string | JSXElementConstructor<any>>",
+          "description": "Customize dropdown content",
+          "defaultValue": null
+        },
+        "filterOption": {
+          "type": "boolean | FilterFunc<DefaultOptionType>",
+          "description": "size of checkboxIf true, filter options by input, if function, filter options against it.\nThe function will receive two arguments, inputValue and option, if the function returns true,\nthe option will be included in the filtered set; Otherwise, it will be excluded",
+          "defaultValue": null
+        },
+        "filterSort": {
+          "type": "(optionA: DefaultOptionType, optionB: DefaultOptionType) => number",
+          "description": "Sort function for search options sorting, see Array.sort's compareFunction",
+          "defaultValue": null
+        },
+        "labelInValue": {
+          "type": "boolean",
+          "description": "Whether to embed label in value, turn the format of value from string to { value: string, label: ReactNode }",
+          "defaultValue": null
+        },
+        "listHeight": {
+          "type": "number",
+          "description": "Config popup height",
+          "defaultValue": null
+        },
+        "loading": {
+          "type": "boolean",
+          "description": "Indicate loading state",
+          "defaultValue": null
+        },
+        "mode": {
+          "type": "\"multiple\" | \"tags\"",
+          "description": "Mode of select",
+          "defaultValue": null
+        },
+        "onChange": {
+          "type": "(value: any, option: DefaultOptionType | DefaultOptionType[]) => void",
+          "description": "Called when select an option or input value change",
+          "defaultValue": null
+        },
+        "onClear": {
+          "type": "() => void",
+          "description": "Called when clear",
+          "defaultValue": null
+        },
+        "onSearch": {
+          "type": "(value: string) => void",
+          "description": "Callback function that is fired when input changed",
+          "defaultValue": null
+        },
+        "options": {
+          "type": "DefaultOptionType[]",
+          "description": "Select options. Will get better perf than jsx definition",
+          "defaultValue": null
+        },
+        "placeholder": {
+          "type": "ReactNode",
+          "description": "Placeholder of select",
+          "defaultValue": null
+        },
+        "placement": {
+          "type": "\"bottomLeft\" | \"bottomRight\" | \"topLeft\" | \"topRight\"",
+          "description": "The position where the selection box pops up",
+          "defaultValue": null
+        },
+        "popupClassName": {
+          "type": "string",
+          "description": "The className of dropdown menu",
+          "defaultValue": null
+        },
+        "searchValue": {
+          "type": "string",
+          "description": "The current input \"search\" text",
+          "defaultValue": null
+        },
+        "showSearch": {
+          "type": "boolean",
+          "description": "Whether select is searchable",
+          "defaultValue": null
+        },
+        "maxTagCount": {
+          "type": "number | \"responsive\"",
+          "description": "maxTagCount",
+          "defaultValue": null
+        },
+        "maxTagTextLength": {
+          "type": "number",
+          "description": "maxTagTextLength",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "\"md\" | \"lg\"",
+          "description": "size of select",
+          "defaultValue": "md"
+        },
+        "status": {
+          "type": "\"\" | \"error\"",
+          "description": "Set validation status",
+          "defaultValue": null
+        },
+        "width": {
+          "type": "string | number",
+          "description": "width of select",
+          "defaultValue": "100%"
+        },
+        "value": {
+          "type": "any",
+          "description": "Current selected option (considered as a immutable array)",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "The ID for input",
+          "defaultValue": null
+        },
+        "help": {
+          "type": "string",
+          "description": "Description of the input",
+          "defaultValue": null
+        },
+        "label": {
+          "type": "string",
+          "description": "label of the input",
+          "defaultValue": null
+        },
+        "onInfoIconClick": {
+          "type": "() => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "showOptionalText": {
+          "type": "boolean",
+          "description": "show optional text along with label",
+          "defaultValue": null
+        },
+        "showInfoIcon": {
+          "type": "boolean",
+          "description": "show info icon along with label",
+          "defaultValue": null
+        }
+      }
+    },
+    "SideNav": {
+      "props": {
+        "append": {
+          "type": "Element | Element[]",
+          "description": "Extend custom element after navigation menu list",
+          "defaultValue": null
+        },
+        "instances": {
+          "type": "{ name: string; logo: Element; smallLogo: Element; }[]",
+          "description": "Instances",
+          "defaultValue": "[]"
+        },
+        "instance": {
+          "type": "string",
+          "description": "Current selected instance",
+          "defaultValue": ""
+        },
+        "menu": {
+          "type": "SideNavListProps[]",
+          "description": "Navigation menu list",
+          "defaultValue": "[]"
+        },
+        "minimizeByDefault": {
+          "type": "boolean",
+          "description": "Minimize the side navigation by default",
+          "defaultValue": "false"
+        },
+        "prepend": {
+          "type": "Element | Element[]",
+          "description": "Extend custom element before navigation menu list",
+          "defaultValue": null
+        },
+        "minimizeOnSelect": {
+          "type": "boolean",
+          "description": "Auto minimize when navigation menu selected",
+          "defaultValue": "false"
+        },
+        "onMinimize": {
+          "type": "(value: boolean) => void",
+          "description": "on minimize event\n@param value\n@returns",
+          "defaultValue": "() => false"
+        },
+        "onSwitchInstance": {
+          "type": "(value: string) => void",
+          "description": "On switch instance event\n@param value\n@returns",
+          "defaultValue": "() => false"
+        }
+      }
+    },
+    "SideNavList": {
+      "props": {
+        "append": {
+          "type": "Element | Element[]",
+          "description": "Extend custom element after navigation menu list",
+          "defaultValue": null
+        },
+        "instances": {
+          "type": "{ name: string; logo: Element; smallLogo: Element; }[]",
+          "description": "Instances",
+          "defaultValue": "[]"
+        },
+        "instance": {
+          "type": "string",
+          "description": "Current selected instance",
+          "defaultValue": ""
+        },
+        "menu": {
+          "type": "SideNavListProps[]",
+          "description": "Navigation menu list",
+          "defaultValue": "[]"
+        },
+        "minimizeByDefault": {
+          "type": "boolean",
+          "description": "Minimize the side navigation by default",
+          "defaultValue": "false"
+        },
+        "prepend": {
+          "type": "Element | Element[]",
+          "description": "Extend custom element before navigation menu list",
+          "defaultValue": null
+        },
+        "minimizeOnSelect": {
+          "type": "boolean",
+          "description": "Auto minimize when navigation menu selected",
+          "defaultValue": "false"
+        },
+        "onMinimize": {
+          "type": "(value: boolean) => void",
+          "description": "on minimize event\n@param value\n@returns",
+          "defaultValue": "() => false"
+        },
+        "onSwitchInstance": {
+          "type": "(value: string) => void",
+          "description": "On switch instance event\n@param value\n@returns",
+          "defaultValue": "() => false"
+        },
+        "handleAutoMinimize": {
+          "type": "() => void",
+          "description": "",
+          "defaultValue": "() => false"
+        }
+      }
+    },
+    "SideNavListItem": {
+      "props": {
+        "withBorder": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "header": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "list": {
+          "type": "{ title: string; icon?: \"\" | \"activity-outline\" | \"airplaine-outline\" | \"alert-circle-outline\" | \"alert-octagon-outline\" | \"alert-triangle-outline\" | \"align-center-outline\" | ... 304 more ... | \"zoom-out-outline\"; active?: boolean; onClick?: () => void; submenu?: { ...; }; }[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "handleAutoMinimize": {
+          "type": "() => void",
+          "description": "",
+          "defaultValue": "() => false"
+        }
+      }
+    },
+    "SideNavListItemContent": {
+      "props": {
+        "item": {
+          "type": "{ title: string; icon?: \"\" | \"activity-outline\" | \"airplaine-outline\" | \"alert-circle-outline\" | \"alert-octagon-outline\" | \"alert-triangle-outline\" | \"align-center-outline\" | ... 304 more ... | \"zoom-out-outline\"; active?: boolean; onClick?: () => void; submenu?: { ...; }; }",
+          "description": "",
+          "defaultValue": null
+        },
+        "keyId": {
+          "type": "string | number",
+          "description": "",
+          "defaultValue": "sidenav-menu-0"
+        },
+        "handleAutoMinimize": {
+          "type": "() => void",
+          "description": "",
+          "defaultValue": "() => false"
+        }
+      }
+    },
+    "PanaceaNavLogo": {
+      "props": {
+        "environment": {
+          "type": "\"development\" | \"staging\" | \"production\"",
+          "description": "",
+          "defaultValue": "production"
+        }
+      }
+    },
+    "PanaceaNavLogoSmall": {
+      "props": {
+        "environment": {
+          "type": "\"development\" | \"staging\" | \"production\"",
+          "description": "",
+          "defaultValue": "production"
+        }
+      }
+    },
+    "SnackbarIconWrapper": {
+      "props": {
+        "slot": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "title": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "key": {
+          "type": "Key",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultChecked": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "string | number | readonly string[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressContentEditableWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressHydrationWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "accessKey": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "contentEditable": {
+          "type": "Booleanish | \"inherit\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "contextMenu": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "dir": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "draggable": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "lang": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "nonce": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "spellCheck": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "tabIndex": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "translate": {
+          "type": "\"yes\" | \"no\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "radioGroup": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "role": {
+          "type": "AriaRole",
+          "description": "",
+          "defaultValue": null
+        },
+        "about": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "content": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "datatype": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "inlist": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefix": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "property": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rel": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "resource": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rev": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "typeof": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "vocab": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCapitalize": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCorrect": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoSave": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "color": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemProp": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemScope": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemType": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemID": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemRef": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "results": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "security": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "unselectable": {
+          "type": "\"on\" | \"off\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "inputMode": {
+          "type": "\"search\" | \"text\" | \"none\" | \"tel\" | \"url\" | \"email\" | \"numeric\" | \"decimal\"",
+          "description": "Hints at the type of data that might be entered by the user while editing the element or its contents\n@see https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute",
+          "defaultValue": null
+        },
+        "is": {
+          "type": "string",
+          "description": "Specify that a standard HTML element should behave like a defined custom built-in element\n@see https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is",
+          "defaultValue": null
+        },
+        "theme": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "as": {
+          "type": "undefined",
+          "description": "",
+          "defaultValue": null
+        },
+        "forwardedAs": {
+          "type": "undefined",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "SnackbarMessageWrapper": {
+      "props": {
+        "button": {
+          "type": "\"beside\" | \"after\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "slot": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "title": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "key": {
+          "type": "Key",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultChecked": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "string | number | readonly string[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressContentEditableWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressHydrationWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "accessKey": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "contentEditable": {
+          "type": "Booleanish | \"inherit\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "contextMenu": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "dir": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "draggable": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "lang": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "nonce": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "spellCheck": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "tabIndex": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "translate": {
+          "type": "\"yes\" | \"no\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "radioGroup": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "role": {
+          "type": "AriaRole",
+          "description": "",
+          "defaultValue": null
+        },
+        "about": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "content": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "datatype": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "inlist": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefix": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "property": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rel": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "resource": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rev": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "typeof": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "vocab": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCapitalize": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCorrect": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoSave": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "color": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemProp": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemScope": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemType": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemID": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemRef": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "results": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "security": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "unselectable": {
+          "type": "\"on\" | \"off\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "inputMode": {
+          "type": "\"search\" | \"text\" | \"none\" | \"tel\" | \"url\" | \"email\" | \"numeric\" | \"decimal\"",
+          "description": "Hints at the type of data that might be entered by the user while editing the element or its contents\n@see https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute",
+          "defaultValue": null
+        },
+        "is": {
+          "type": "string",
+          "description": "Specify that a standard HTML element should behave like a defined custom built-in element\n@see https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is",
+          "defaultValue": null
+        },
+        "theme": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "as": {
+          "type": "undefined",
+          "description": "",
+          "defaultValue": null
+        },
+        "forwardedAs": {
+          "type": "undefined",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "SnackbarButton": {
+      "props": {
+        "button": {
+          "type": "\"beside\" | \"after\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "slot": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "title": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "key": {
+          "type": "Key",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultChecked": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "string | number | readonly string[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressContentEditableWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressHydrationWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "accessKey": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "contentEditable": {
+          "type": "Booleanish | \"inherit\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "contextMenu": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "dir": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "draggable": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "lang": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "nonce": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "spellCheck": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "tabIndex": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "translate": {
+          "type": "\"yes\" | \"no\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "radioGroup": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "role": {
+          "type": "AriaRole",
+          "description": "",
+          "defaultValue": null
+        },
+        "about": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "content": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "datatype": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "inlist": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefix": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "property": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rel": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "resource": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rev": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "typeof": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "vocab": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCapitalize": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCorrect": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoSave": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "color": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemProp": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemScope": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemType": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemID": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemRef": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "results": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "security": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "unselectable": {
+          "type": "\"on\" | \"off\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "inputMode": {
+          "type": "\"search\" | \"text\" | \"none\" | \"tel\" | \"url\" | \"email\" | \"numeric\" | \"decimal\"",
+          "description": "Hints at the type of data that might be entered by the user while editing the element or its contents\n@see https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute",
+          "defaultValue": null
+        },
+        "is": {
+          "type": "string",
+          "description": "Specify that a standard HTML element should behave like a defined custom built-in element\n@see https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is",
+          "defaultValue": null
+        },
+        "theme": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "as": {
+          "type": "undefined",
+          "description": "",
+          "defaultValue": null
+        },
+        "forwardedAs": {
+          "type": "undefined",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "SnackbarProvider": {
+      "props": {}
+    },
+    "Spacer": {
+      "props": {
+        "align": {
+          "type": "\"start\" | \"end\" | \"center\" | \"baseline\"",
+          "description": "Align items",
+          "defaultValue": null
+        },
+        "children": {
+          "type": "ReactNode",
+          "description": "Children",
+          "defaultValue": null
+        },
+        "direction": {
+          "type": "\"horizontal\" | \"vertical\"",
+          "description": "The space direction",
+          "defaultValue": "horizontal"
+        },
+        "size": {
+          "type": "number | \"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\" | \"xxl\" | \"xxxl\" | \"auto\"",
+          "description": "The space size {  xs: 4, sm: 8, md: 16, lg: 24, xl: 32, 'xxl': 40, 'xxxl': 48 }",
+          "defaultValue": null
+        },
+        "split": {
+          "type": "ReactNode",
+          "description": "Set split",
+          "defaultValue": null
+        },
+        "wrap": {
+          "type": "boolean",
+          "description": "Auto wrap line, when horizontal effective",
+          "defaultValue": null
+        },
+        "type": {
+          "type": "\"wrapper\" | \"block\"",
+          "description": "type of spacer",
+          "defaultValue": "block"
+        },
+        "className": {
+          "type": "string",
+          "description": "className for custom css",
+          "defaultValue": null
+        }
+      }
+    },
+    "Steps": {
+      "props": {
+        "type": {
+          "type": "\"default\" | \"navigation\" | \"inline\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "current": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "direction": {
+          "type": "\"horizontal\" | \"vertical\"",
+          "description": "",
+          "defaultValue": "horizontal"
+        },
+        "iconPrefix": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "initial": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "labelPlacement": {
+          "type": "\"horizontal\" | \"vertical\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "progressDot": {
+          "type": "boolean | ProgressDotRender",
+          "description": "",
+          "defaultValue": null
+        },
+        "responsive": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": "false"
+        },
+        "size": {
+          "type": "\"default\" | \"small\"",
+          "description": "",
+          "defaultValue": "small"
+        },
+        "status": {
+          "type": "\"wait\" | \"process\" | \"finish\" | \"error\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "percent": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "onChange": {
+          "type": "(current: number) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "items": {
+          "type": "StepProps[]",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "Switch": {
+      "props": {
+        "id": {
+          "type": "string",
+          "description": "Id",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "Whether get focus when component mounted",
+          "defaultValue": "false"
+        },
+        "checked": {
+          "type": "boolean",
+          "description": "Determine whether the Switch is checked",
+          "defaultValue": "false"
+        },
+        "checkedChildren": {
+          "type": "ReactNode",
+          "description": "The content to be shown when the state is checked",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "The additional class to Switch",
+          "defaultValue": null
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Disable switch",
+          "defaultValue": "false"
+        },
+        "loading": {
+          "type": "boolean",
+          "description": "Loading state of switch",
+          "defaultValue": "false"
+        },
+        "onChange": {
+          "type": "SwitchChangeEventHandler",
+          "description": "Trigger when the checked state is changing",
+          "defaultValue": null
+        },
+        "unCheckedChildren": {
+          "type": "ReactNode",
+          "description": "The content to be shown when the state is unchecked",
+          "defaultValue": null
+        }
+      }
+    },
+    "Table": {
+      "props": {
+        "id": {
+          "type": "string",
+          "description": "Id of table",
+          "defaultValue": null
+        },
+        "isSticky": {
+          "type": "boolean",
+          "description": "Whether the table is sticky",
+          "defaultValue": "false"
+        },
+        "className": {
+          "type": "string",
+          "description": "ClassName of table",
+          "defaultValue": ""
+        },
+        "columns": {
+          "type": "TableColumns<T>",
+          "description": "Columns of table",
+          "defaultValue": null
+        },
+        "data": {
+          "type": "T[]",
+          "description": "Data record array to be displayed",
+          "defaultValue": "[]"
+        },
+        "header": {
+          "type": "Element",
+          "description": "header for the table",
+          "defaultValue": null
+        },
+        "loading": {
+          "type": "boolean | SpinProps",
+          "description": "Loading status of table",
+          "defaultValue": null
+        },
+        "rowKey": {
+          "type": "string | number | symbol | GetRowKey<T>",
+          "description": "Key for the row",
+          "defaultValue": null
+        },
+        "rowSelection": {
+          "type": "Omit<TableRowSelection<T>, \"onChange\" | \"onSelect\"> & { onChange?: (selectedRowKeys: React.Key[], selectedRows: T[], info: { type: RowSelectMethod; }) => void; onSelect?: (record: T, selected: boolean, selectedRows: T[], nativeEvent: Event) => void; }",
+          "description": "row selection",
+          "defaultValue": null
+        },
+        "noRecordFoundWordings": {
+          "type": "{ title: string; description: string; }",
+          "description": "Custom empty state configs for table",
+          "defaultValue": "{\n\t\ttitle: 'Buat transaksi pertama Anda',\n\t\tdescription: 'Kirim uang antar-bank ke banyak tujuan penerima dengan biaya hemat.',\n\t}"
+        },
+        "noRecordFoundImage": {
+          "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+          "description": "Custom empty state image for table",
+          "defaultValue": "<Empty />"
+        },
+        "currentPage": {
+          "type": "number",
+          "description": "Current page. @deprecated use paginationProps instead",
+          "defaultValue": null
+        },
+        "totalPages": {
+          "type": "number",
+          "description": "Total pages. @deprecated use paginationProps instead",
+          "defaultValue": null
+        },
+        "pageSize": {
+          "type": "number",
+          "description": "Page size. @deprecated use paginationProps instead",
+          "defaultValue": null
+        },
+        "pageSizeOptions": {
+          "type": "string[] | number[]",
+          "description": "Page size options. @deprecated use paginationProps instead",
+          "defaultValue": null
+        },
+        "hideOnSinglePage": {
+          "type": "boolean",
+          "description": "Hide pagination on single page. @deprecated use paginationProps instead",
+          "defaultValue": "true"
+        },
+        "onPageChange": {
+          "type": "(page: number, pageSize: number) => void",
+          "description": "Callback function that is executed when the page number or page size is changed. @deprecated use paginationProps instead",
+          "defaultValue": null
+        },
+        "onShowPageSizeChange": {
+          "type": "(current: number, size: number) => void",
+          "description": "Callback function that is executed when the page size is changed. @deprecated use paginationProps instead",
+          "defaultValue": null
+        },
+        "paginationProps": {
+          "type": "PaginationProps",
+          "description": "Pagination props",
+          "defaultValue": null
+        },
+        "onTableChange": {
+          "type": "(pagination: TablePaginationConfig, filters: Record<string, FilterValue>, sorter: SorterResult<T> | SorterResult<T>[], extra: TableCurrentDataSource<...>) => void",
+          "description": "Callback function that is executed when the table is changed.",
+          "defaultValue": null
+        },
+        "dropdownPrefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "dataSource": {
+          "type": "readonly T[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "pagination": {
+          "type": "false | TablePaginationConfig",
+          "description": "",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "SizeType",
+          "description": "",
+          "defaultValue": null
+        },
+        "bordered": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "locale": {
+          "type": "TableLocale",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "onChange": {
+          "type": "(pagination: TablePaginationConfig, filters: Record<string, FilterValue>, sorter: SorterResult<T> | SorterResult<T>[], extra: TableCurrentDataSource<...>) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "getPopupContainer": {
+          "type": "GetPopupContainer",
+          "description": "",
+          "defaultValue": null
+        },
+        "scroll": {
+          "type": "{ x?: string | number | true; y?: string | number; } & { scrollToFirstRowOnChange?: boolean; }",
+          "description": "",
+          "defaultValue": null
+        },
+        "sortDirections": {
+          "type": "SortOrder[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "showSorterTooltip": {
+          "type": "boolean | TooltipProps",
+          "description": "",
+          "defaultValue": null
+        },
+        "expandedRowKeys": {
+          "type": "Key[]",
+          "description": "@deprecated Use `expandable.expandedRowKeys` instead",
+          "defaultValue": null
+        },
+        "defaultExpandedRowKeys": {
+          "type": "Key[]",
+          "description": "@deprecated Use `expandable.defaultExpandedRowKeys` instead",
+          "defaultValue": null
+        },
+        "expandedRowRender": {
+          "type": "ExpandedRowRender<T>",
+          "description": "@deprecated Use `expandable.expandedRowRender` instead",
+          "defaultValue": null
+        },
+        "expandRowByClick": {
+          "type": "boolean",
+          "description": "@deprecated Use `expandable.expandRowByClick` instead",
+          "defaultValue": null
+        },
+        "expandIcon": {
+          "type": "RenderExpandIcon<T>",
+          "description": "@deprecated Use `expandable.expandIcon` instead",
+          "defaultValue": null
+        },
+        "onExpand": {
+          "type": "(expanded: boolean, record: T) => void",
+          "description": "@deprecated Use `expandable.onExpand` instead",
+          "defaultValue": null
+        },
+        "onExpandedRowsChange": {
+          "type": "(expandedKeys: Key[]) => void",
+          "description": "@deprecated Use `expandable.onExpandedRowsChange` instead",
+          "defaultValue": null
+        },
+        "defaultExpandAllRows": {
+          "type": "boolean",
+          "description": "@deprecated Use `expandable.defaultExpandAllRows` instead",
+          "defaultValue": null
+        },
+        "indentSize": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "expandIconColumnIndex": {
+          "type": "number",
+          "description": "@deprecated Use `expandable.expandIconColumnIndex` instead",
+          "defaultValue": null
+        },
+        "expandedRowClassName": {
+          "type": "RowClassName<T>",
+          "description": "@deprecated Use `expandable.expandedRowClassName` instead",
+          "defaultValue": null
+        },
+        "childrenColumnName": {
+          "type": "string",
+          "description": "@deprecated Use `expandable.childrenColumnName` instead",
+          "defaultValue": null
+        },
+        "title": {
+          "type": "PanelRender<T>",
+          "description": "@deprecated Use `caption` instead",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "tableLayout": {
+          "type": "TableLayout",
+          "description": "",
+          "defaultValue": null
+        },
+        "expandable": {
+          "type": "ExpandableConfig<T>",
+          "description": "Config expand rows",
+          "defaultValue": null
+        },
+        "rowClassName": {
+          "type": "string | RowClassName<T>",
+          "description": "",
+          "defaultValue": null
+        },
+        "footer": {
+          "type": "PanelRender<T>",
+          "description": "",
+          "defaultValue": null
+        },
+        "summary": {
+          "type": "(data: readonly T[]) => ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "caption": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "showHeader": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "components": {
+          "type": "TableComponents<T>",
+          "description": "",
+          "defaultValue": null
+        },
+        "onRow": {
+          "type": "GetComponentProps<T>",
+          "description": "",
+          "defaultValue": null
+        },
+        "onHeaderRow": {
+          "type": "GetComponentProps<readonly ColumnType<T>[]>",
+          "description": "",
+          "defaultValue": null
+        },
+        "direction": {
+          "type": "Direction",
+          "description": "",
+          "defaultValue": null
+        },
+        "sticky": {
+          "type": "boolean | TableSticky",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "TableColumnWithSorting": {
+      "props": {
+        "title": {
+          "type": "string",
+          "description": "Title of the column",
+          "defaultValue": null
+        },
+        "fieldname": {
+          "type": "string",
+          "description": "Field name of the column",
+          "defaultValue": null
+        },
+        "ascendingKey": {
+          "type": "\"ascending\" | \"asc\" | \"ASC\"",
+          "description": "Ascending key",
+          "defaultValue": "asc"
+        },
+        "descendingKey": {
+          "type": "\"descending\" | \"desc\" | \"DESC\"",
+          "description": "Descending key",
+          "defaultValue": "desc"
+        },
+        "currentSort": {
+          "type": "{ order?: string; columnKey?: string; }",
+          "description": "Current sort",
+          "defaultValue": null
+        },
+        "spacerProps": {
+          "type": "SpacerProps",
+          "description": "Spacer props",
+          "defaultValue": null
+        },
+        "titleProps": {
+          "type": "TypographyProps",
+          "description": "Title props",
+          "defaultValue": null
+        },
+        "onSortChange": {
+          "type": "(columnKey?: string, sortOrder?: string) => void",
+          "description": "Callback function that is executed when the sort is changed.",
+          "defaultValue": null
+        }
+      }
+    },
+    "Tabs": {
+      "props": {
+        "activeTab": {
+          "type": "string",
+          "description": "Defines current active tab",
+          "defaultValue": null
+        },
+        "items": {
+          "type": "Tab[]",
+          "description": "An array of items that define the tabs to be rendered in the interface.",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "SizeType",
+          "description": "(optional): Specifies the size of the tabs.",
+          "defaultValue": "middle"
+        },
+        "position": {
+          "type": "TabPosition",
+          "description": "(optional): Determines the position of the tabs within the interface.",
+          "defaultValue": "top"
+        },
+        "defaultTabKey": {
+          "type": "string",
+          "description": "*\n(optional): Sets the default active tab key when the interface initially loads.",
+          "defaultValue": "1"
+        },
+        "callback": {
+          "type": "(key: string) => void",
+          "description": "*\n(optional): A callback function that gets triggered when a tab is selected, passing the selected tab key as a parameter.",
+          "defaultValue": null
+        }
+      }
+    },
+    "Tag": {
+      "props": {
+        "id": {
+          "type": "string",
+          "description": "The id for tag",
+          "defaultValue": null
+        },
+        "children": {
+          "type": "string | Element",
+          "description": "children or label",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "className for custom css",
+          "defaultValue": null
+        },
+        "closable": {
+          "type": "boolean",
+          "description": "Whether the Tag can be closed",
+          "defaultValue": "false"
+        },
+        "type": {
+          "type": "\"success\" | \"info\" | \"warning\" | \"error\" | \"default\"",
+          "description": "type of the tag",
+          "defaultValue": "default"
+        }
+      }
+    },
+    "Timeline": {
+      "props": {
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "pending": {
+          "type": "ReactNode",
+          "description": "指定最后一个幽灵节点是否存在或内容",
+          "defaultValue": null
+        },
+        "pendingDot": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "reverse": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "mode": {
+          "type": "\"left\" | \"alternate\" | \"right\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "items": {
+          "type": "TimelineItemProps[]",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "Tooltip": {
+      "props": {
+        "title": {
+          "type": "ReactNode | RenderFunction",
+          "description": "",
+          "defaultValue": null
+        },
+        "overlay": {
+          "type": "ReactNode | RenderFunction",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "color": {
+          "type": "LiteralUnion<PresetColorType>",
+          "description": "",
+          "defaultValue": null
+        },
+        "placement": {
+          "type": "TooltipPlacement",
+          "description": "",
+          "defaultValue": null
+        },
+        "builtinPlacements": {
+          "type": "BuildInPlacements",
+          "description": "",
+          "defaultValue": null
+        },
+        "openClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "arrowPointAtCenter": {
+          "type": "boolean",
+          "description": "@deprecated Please use `arrow={{ pointAtCenter: true }}` instead.",
+          "defaultValue": null
+        },
+        "arrow": {
+          "type": "boolean | { arrowPointAtCenter?: boolean; pointAtCenter?: boolean; }",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoAdjustOverflow": {
+          "type": "boolean | AdjustOverflow",
+          "description": "",
+          "defaultValue": null
+        },
+        "destroyTooltipOnHide": {
+          "type": "boolean | { keepParent?: boolean; }",
+          "description": "",
+          "defaultValue": null
+        },
+        "open": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultOpen": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "onOpenChange": {
+          "type": "(visible: boolean) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "afterOpenChange": {
+          "type": "(visible: boolean) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "visible": {
+          "type": "boolean",
+          "description": "@deprecated Please use `open` instead.",
+          "defaultValue": null
+        },
+        "defaultVisible": {
+          "type": "boolean",
+          "description": "@deprecated Please use `defaultOpen` instead.",
+          "defaultValue": null
+        },
+        "onVisibleChange": {
+          "type": "(visible: boolean) => void",
+          "description": "@deprecated Please use `onOpenChange` instead.",
+          "defaultValue": null
+        },
+        "afterVisibleChange": {
+          "type": "(visible: boolean) => void",
+          "description": "@deprecated Please use `afterOpenChange` instead.",
+          "defaultValue": null
+        },
+        "trigger": {
+          "type": "ActionType | ActionType[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "transitionName": {
+          "type": "string",
+          "description": "@deprecated Use `motion` instead",
+          "defaultValue": null
+        },
+        "animation": {
+          "type": "string",
+          "description": "@deprecated Use `motion` instead",
+          "defaultValue": null
+        },
+        "motion": {
+          "type": "CSSMotionProps",
+          "description": "Config popup motion",
+          "defaultValue": null
+        },
+        "overlayStyle": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "overlayClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "mouseEnterDelay": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "mouseLeaveDelay": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "align": {
+          "type": "AlignType",
+          "description": "",
+          "defaultValue": null
+        },
+        "showArrow": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "arrowContent": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "popupVisible": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "overlayInnerStyle": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "zIndex": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "ref": {
+          "type": "Ref<unknown>",
+          "description": "Allows getting a ref to the component instance.\nOnce the component unmounts, React will set `ref.current` to `null` (or call the ref with `null` if you passed a callback ref).\n@see https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom",
+          "defaultValue": null
+        },
+        "key": {
+          "type": "Key",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "TreeSelect": {
+      "props": {
+        "suffixIcon": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "size": {
+          "type": "SizeType",
+          "description": "",
+          "defaultValue": null
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "placement": {
+          "type": "\"bottomLeft\" | \"bottomRight\" | \"topLeft\" | \"topRight\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "popupClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "dropdownClassName": {
+          "type": "string",
+          "description": "@deprecated Please use `popupClassName` instead",
+          "defaultValue": null
+        },
+        "bordered": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "treeLine": {
+          "type": "boolean | { showLeafIcon: any; }",
+          "description": "",
+          "defaultValue": null
+        },
+        "status": {
+          "type": "\"\" | \"warning\" | \"error\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "switcherIcon": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "rootClassName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "dropdownMatchSelectWidth": {
+          "type": "number | boolean",
+          "description": "@deprecated Please use `popupMatchSelectWidth` instead",
+          "defaultValue": null
+        },
+        "popupMatchSelectWidth": {
+          "type": "number | boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "showArrow": {
+          "type": "boolean",
+          "description": "@deprecated `showArrow` is deprecated which will be removed in next major version. It will be a\ndefault behavior, you can hide it by setting `suffixIcon` to null.",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "searchValue": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoClearSearchValue": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "onSearch": {
+          "type": "(value: string) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "title": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "showSearch": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "tagRender": {
+          "type": "(props: CustomTagProps) => ReactElement<any, string | JSXElementConstructor<any>>",
+          "description": "",
+          "defaultValue": null
+        },
+        "direction": {
+          "type": "\"ltr\" | \"rtl\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "maxLength": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "tabIndex": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "notFoundContent": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "placeholder": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "onClear": {
+          "type": "() => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "choiceTransitionName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "loading": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "open": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultOpen": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "onDropdownVisibleChange": {
+          "type": "(open: boolean) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "getRawInputElement": {
+          "type": "() => Element",
+          "description": "@private Internal usage. Do not use in your production.",
+          "defaultValue": null
+        },
+        "maxTagTextLength": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "maxTagCount": {
+          "type": "number | \"responsive\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "maxTagPlaceholder": {
+          "type": "ReactNode | ((omittedValues: DisplayValueType[]) => ReactNode)",
+          "description": "",
+          "defaultValue": null
+        },
+        "tokenSeparators": {
+          "type": "string[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "allowClear": {
+          "type": "boolean | { clearIcon?: RenderNode; }",
+          "description": "",
+          "defaultValue": null
+        },
+        "clearIcon": {
+          "type": "RenderNode",
+          "description": "Clear all icon\n@deprecated Please use `allowClear` instead",
+          "defaultValue": null
+        },
+        "removeIcon": {
+          "type": "RenderNode",
+          "description": "Selector remove icon",
+          "defaultValue": null
+        },
+        "animation": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "transitionName": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "dropdownStyle": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "dropdownRender": {
+          "type": "(menu: ReactElement<any, string | JSXElementConstructor<any>>) => ReactElement<any, string | JSXElementConstructor<any>>",
+          "description": "",
+          "defaultValue": null
+        },
+        "dropdownAlign": {
+          "type": "AlignType",
+          "description": "",
+          "defaultValue": null
+        },
+        "builtinPlacements": {
+          "type": "BuildInPlacements",
+          "description": "",
+          "defaultValue": null
+        },
+        "getPopupContainer": {
+          "type": "RenderDOMFunc",
+          "description": "",
+          "defaultValue": null
+        },
+        "showAction": {
+          "type": "(\"focus\" | \"click\")[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "value": {
+          "type": "ValueType",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "ValueType",
+          "description": "",
+          "defaultValue": null
+        },
+        "onChange": {
+          "type": "(value: ValueType, labelList: ReactNode[], extra: ChangeEventExtra) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "inputValue": {
+          "type": "string",
+          "description": "@deprecated Use `searchValue` instead",
+          "defaultValue": null
+        },
+        "filterTreeNode": {
+          "type": "boolean | ((inputValue: string, treeNode: DefaultOptionType) => boolean)",
+          "description": "",
+          "defaultValue": null
+        },
+        "treeNodeFilterProp": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "onSelect": {
+          "type": "SelectHandler<ArrayElementType<ValueType>, OptionType>",
+          "description": "",
+          "defaultValue": null
+        },
+        "onDeselect": {
+          "type": "SelectHandler<ArrayElementType<ValueType>, OptionType>",
+          "description": "",
+          "defaultValue": null
+        },
+        "showCheckedStrategy": {
+          "type": "CheckedStrategy",
+          "description": "",
+          "defaultValue": null
+        },
+        "treeNodeLabelProp": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "fieldNames": {
+          "type": "FieldNames",
+          "description": "",
+          "defaultValue": null
+        },
+        "multiple": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "treeCheckable": {
+          "type": "ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "treeCheckStrictly": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "labelInValue": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "treeData": {
+          "type": "OptionType[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "treeDataSimpleMode": {
+          "type": "boolean | SimpleModeConfig",
+          "description": "",
+          "defaultValue": null
+        },
+        "loadData": {
+          "type": "(dataNode: LegacyDataNode) => Promise<unknown>",
+          "description": "",
+          "defaultValue": null
+        },
+        "treeLoadedKeys": {
+          "type": "Key[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "onTreeLoad": {
+          "type": "(loadedKeys: Key[]) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "treeDefaultExpandAll": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "treeExpandedKeys": {
+          "type": "Key[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "treeDefaultExpandedKeys": {
+          "type": "Key[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "onTreeExpand": {
+          "type": "(expandedKeys: Key[]) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "treeExpandAction": {
+          "type": "ExpandAction",
+          "description": "",
+          "defaultValue": null
+        },
+        "virtual": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "listHeight": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "listItemHeight": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "treeIcon": {
+          "type": "IconType",
+          "description": "",
+          "defaultValue": null
+        },
+        "ref": {
+          "type": "Ref<BaseSelectRef>",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "Typography": {
+      "props": {
+        "children": {
+          "type": "string",
+          "description": "Text content",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "Extended class name",
+          "defaultValue": null
+        },
+        "color": {
+          "type": "string",
+          "description": "Text color (hex code). Won't work if font color is defined",
+          "defaultValue": null
+        },
+        "fontColor": {
+          "type": "\"colorNegative\" | \"colorNegativeHover\" | \"colorNegativeActive\" | \"colorWarning\" | \"colorWarningHover\" | \"colorWarningActive\" | \"colorPositive\" | \"colorPositiveHover\" | \"colorPositiveActive\" | ... 11 more ... | \"colorTextPlaceholder\"",
+          "description": "Text color (color code). Will overwrite color if defined",
+          "defaultValue": null
+        },
+        "fontWeight": {
+          "type": "\"fontWeightRegular\" | \"fontWeightStrong\"",
+          "description": "Font weight",
+          "defaultValue": "fontWeightRegular"
+        },
+        "fontSize": {
+          "type": "keyof FontSizeType",
+          "description": "Font size",
+          "defaultValue": "fontSizeBase"
+        },
+        "italic": {
+          "type": "boolean",
+          "description": "Font italics style",
+          "defaultValue": null
+        },
+        "textDecoration": {
+          "type": "\"underline\" | \"overline\" | \"line-through\" | \"underline overline\"",
+          "description": "Text decoration",
+          "defaultValue": null
+        },
+        "textAlign": {
+          "type": "\"center\" | \"left\" | \"right\"",
+          "description": "Text alignment",
+          "defaultValue": null
+        },
+        "textTransform": {
+          "type": "\"capitalize\" | \"uppercase\" | \"lowercase\"",
+          "description": "Text transform",
+          "defaultValue": null
+        },
+        "truncate": {
+          "type": "boolean",
+          "description": "Truncate text",
+          "defaultValue": null
+        }
+      }
+    },
+    "Upload": {
+      "props": {
+        "type": {
+          "type": "UploadType",
+          "description": "",
+          "defaultValue": null
+        },
+        "name": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultFileList": {
+          "type": "UploadFile<any>[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "fileList": {
+          "type": "UploadFile<any>[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "action": {
+          "type": "string | ((file: RcFile) => string) | ((file: RcFile) => PromiseLike<string>)",
+          "description": "",
+          "defaultValue": null
+        },
+        "directory": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "data": {
+          "type": "Record<string, unknown> | ((file: UploadFile<any>) => Record<string, unknown> | Promise<Record<string, unknown>>)",
+          "description": "",
+          "defaultValue": null
+        },
+        "method": {
+          "type": "\"POST\" | \"PUT\" | \"PATCH\" | \"post\" | \"put\" | \"patch\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "headers": {
+          "type": "HttpRequestHeader",
+          "description": "",
+          "defaultValue": null
+        },
+        "showUploadList": {
+          "type": "boolean | ShowUploadListInterface<any>",
+          "description": "",
+          "defaultValue": null
+        },
+        "multiple": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "accept": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "beforeUpload": {
+          "type": "(file: RcFile, FileList: RcFile[]) => BeforeUploadValueType | Promise<BeforeUploadValueType>",
+          "description": "",
+          "defaultValue": null
+        },
+        "onChange": {
+          "type": "(info: UploadChangeParam<UploadFile<any>>) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "listType": {
+          "type": "UploadListType",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "onPreview": {
+          "type": "(file: UploadFile<any>) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "onDownload": {
+          "type": "(file: UploadFile<any>) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "onRemove": {
+          "type": "(file: UploadFile<any>) => boolean | void | Promise<boolean | void>",
+          "description": "",
+          "defaultValue": null
+        },
+        "supportServerRender": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefixCls": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "customRequest": {
+          "type": "(options: UploadRequestOption<any>) => void",
+          "description": "",
+          "defaultValue": null
+        },
+        "withCredentials": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "openFileDialogOnClick": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "locale": {
+          "type": "UploadLocale",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "previewFile": {
+          "type": "PreviewFileHandler",
+          "description": "",
+          "defaultValue": null
+        },
+        "transformFile": {
+          "type": "TransformFileHandler",
+          "description": "@deprecated Please use `beforeUpload` directly",
+          "defaultValue": null
+        },
+        "iconRender": {
+          "type": "(file: UploadFile<any>, listType?: UploadListType) => ReactNode",
+          "description": "",
+          "defaultValue": null
+        },
+        "isImageUrl": {
+          "type": "(file: UploadFile<any>) => boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "progress": {
+          "type": "UploadListProgressProps",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemRender": {
+          "type": "ItemRender<any>",
+          "description": "",
+          "defaultValue": null
+        },
+        "maxCount": {
+          "type": "number",
+          "description": "Config max count of `fileList`. Will replace current one when `maxCount` is 1",
+          "defaultValue": null
+        },
+        "capture": {
+          "type": "boolean | \"user\" | \"environment\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "ref": {
+          "type": "Ref<UploadRef<any>>",
+          "description": "Allows getting a ref to the component instance.\nOnce the component unmounts, React will set `ref.current` to `null` (or call the ref with `null` if you passed a callback ref).\n@see https://react.dev/learn/referencing-values-with-refs#refs-and-the-dom",
+          "defaultValue": null
+        },
+        "key": {
+          "type": "Key",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    },
+    "UploadFileContainer": {
+      "props": {
+        "placeholder": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultChecked": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "defaultValue": {
+          "type": "string | number | readonly string[]",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressContentEditableWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "suppressHydrationWarning": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "accessKey": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoFocus": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "className": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "contentEditable": {
+          "type": "Booleanish | \"inherit\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "contextMenu": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "dir": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "draggable": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "id": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "lang": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "nonce": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "slot": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "spellCheck": {
+          "type": "Booleanish",
+          "description": "",
+          "defaultValue": null
+        },
+        "style": {
+          "type": "CSSProperties",
+          "description": "",
+          "defaultValue": null
+        },
+        "tabIndex": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "title": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "translate": {
+          "type": "\"yes\" | \"no\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "radioGroup": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "role": {
+          "type": "AriaRole",
+          "description": "",
+          "defaultValue": null
+        },
+        "about": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "content": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "datatype": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "inlist": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "prefix": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "property": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rel": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "resource": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "rev": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "typeof": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "vocab": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCapitalize": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoCorrect": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "autoSave": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "color": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemProp": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemScope": {
+          "type": "boolean",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemType": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemID": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "itemRef": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "results": {
+          "type": "number",
+          "description": "",
+          "defaultValue": null
+        },
+        "security": {
+          "type": "string",
+          "description": "",
+          "defaultValue": null
+        },
+        "unselectable": {
+          "type": "\"on\" | \"off\"",
+          "description": "",
+          "defaultValue": null
+        },
+        "inputMode": {
+          "type": "\"text\" | \"search\" | \"none\" | \"tel\" | \"url\" | \"email\" | \"numeric\" | \"decimal\"",
+          "description": "Hints at the type of data that might be entered by the user while editing the element or its contents\n@see https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-inputmode-attribute",
+          "defaultValue": null
+        },
+        "is": {
+          "type": "string",
+          "description": "Specify that a standard HTML element should behave like a defined custom built-in element\n@see https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is",
+          "defaultValue": null
+        },
+        "key": {
+          "type": "Key",
+          "description": "",
+          "defaultValue": null
+        },
+        "theme": {
+          "type": "any",
+          "description": "",
+          "defaultValue": null
+        },
+        "as": {
+          "type": "undefined",
+          "description": "",
+          "defaultValue": null
+        },
+        "forwardedAs": {
+          "type": "undefined",
+          "description": "",
+          "defaultValue": null
+        }
+      }
+    }
+  }
