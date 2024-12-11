@@ -8,13 +8,13 @@ const env =
 export const LINK_HOST = {
 	production: 'makereal.tldraw.link',
 	preview: `link---${process.env.NEXT_PUBLIC_VERCEL_URL}`,
-	development: 'makereal-link.localhost:3000',
+	development: 'makereal-link.localhost:3939',
 }[env]
 
 export const APP_HOST = {
 	production: 'makereal.tldraw.com',
 	preview: process.env.NEXT_PUBLIC_VERCEL_URL,
-	development: 'localhost:3000',
+	development: 'localhost:3939',
 }[env]
 
 export const PROTOCOL = env === 'development' ? 'http://' : 'https://'

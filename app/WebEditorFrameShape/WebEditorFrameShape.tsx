@@ -15,6 +15,7 @@ import {
 } from 'tldraw'
 import { Dropdown } from '../components/Dropdown'
 import { LINK_HOST, PROTOCOL } from '../lib/hosts'
+import { nanoid } from 'nanoid'
 
 export type WebEditorFrameShape = TLBaseShape<
 	'web-editor-frame',
@@ -33,9 +34,11 @@ export type WebEditorFrameShape = TLBaseShape<
 export class WebEditorFrameShapeUtil extends BaseBoxShapeUtil<WebEditorFrameShape> {
 	static override type = 'web-editor-frame' as const
 
+	uuid = nanoid()
+
 	getDefaultProps(): WebEditorFrameShape['props'] {
 		return {
-			url: '',
+			url: `http://localhost:3000/panacea/panacea/web-editor/${this.uuid}`,
 			source: '',
 			parts: [],
 			w: (960 * 2) / 3,
