@@ -20,7 +20,7 @@ import {
 	TextField,
 	Typography,
 } from '@bukuwarung/bwdl'
-import { COLORS } from '@bukuwarung/bwdl/dist/constants'
+import { COLORS } from '@bukuwarung/bwdl/constants'
 import { Fragment, useState } from 'react'
 import { useEditor } from 'tldraw'
 import { TopPanelDropdown } from './TopPanelDropdown'
@@ -281,7 +281,7 @@ const components = [
 		key: 'Radio',
 		category: 'Data Input',
 		label: 'Radio',
-		children: <Radio value={true} label="Radio" />,
+		children: <Radio value={true} />,
 	},
 	{
 		key: 'Select',
