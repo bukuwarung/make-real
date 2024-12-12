@@ -4,12 +4,14 @@ import {
 	Button,
 	CardWrapper,
 	Checkbox,
+	Col,
 	DatePicker,
 	DateRangePicker,
 	Divider,
 	Icon,
 	Pagination,
 	Radio,
+	Row,
 	Select,
 	Spacer,
 	Switch,
@@ -177,6 +179,18 @@ export function CustomTopPanel() {
 }
 
 const components = [
+	{
+		key: 'Row	',
+		category: 'Layout',
+		label: 'Row',
+		children: <Row>Row</Row>,
+	},
+	{
+		key: 'Col',
+		category: 'Layout',
+		label: 'Col',
+		children: <Col>Col</Col>,
+	},
 	{
 		key: 'Accordion',
 		category: 'Data Display',

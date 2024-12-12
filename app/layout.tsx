@@ -76,7 +76,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					name="viewport"
 					content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1"
 				/>
-				<style>{`:root { --font-roboto: ${roboto.style.fontFamily}, sans-serif; } html, body * { font-family: var(--font-roboto) !important; }`}</style>
+				<style
+					dangerouslySetInnerHTML={{
+						__html: `:root { --font-roboto: ${roboto.style.fontFamily}, sans-serif; } html, body * { font-family: var(--font-roboto) !important; }`,
+					}}
+				/>
 			</head>
 			<body className={roboto.className}>
 				{children}

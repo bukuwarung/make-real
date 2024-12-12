@@ -77,27 +77,32 @@ export class WebEditorFrameShapeUtil extends BaseBoxShapeUtil<WebEditorFrameShap
 
 		const rIframe = useRef<HTMLIFrameElement>(null)
 
-		const isLoading = linkUploadVersion === undefined || uploadedShapeId !== shape.id
+		const isLoading = false
 
-		const uploadUrl = [PROTOCOL, LINK_HOST, '/', shape.id.replace(/^shape:/, '')].join('')
+		console.log('isLoading', isLoading, linkUploadVersion, uploadedShapeId, shape.id)
+
+		const uploadUrl = [PROTOCOL, LINK_HOST, '/panacea/panacea/web-editor/', shape.id.replace(/^shape:/, '')].join('')
+		const iframeSrc = `${uploadUrl}?preview=1&v=${linkUploadVersion}`
 
 		const htmlIsEmpty = shape.props.parts?.length === 0
 
 		const rCursor = useRef(0)
 
 		useEffect(() => {
+			
 			if (!isLoading) return
 			const iframe = rIframe.current
 			if (!iframe) return
-
+			
 			if (!shape.props.parts) return
-
+			
 			for (let i = rCursor.current; i < shape.props.parts.length; i++) {
 				const part = shape.props.parts[i]
 				iframe.contentDocument.write(part)
 			}
-
+			
 			rCursor.current = shape.props.parts.length
+			
 
 			// iframe.contentDocument.close()
 			// iframe.contentDocument.open()
@@ -158,7 +163,7 @@ export class WebEditorFrameShapeUtil extends BaseBoxShapeUtil<WebEditorFrameShap
 					<>
 						<iframe
 							id={`iframe-1-${shape.id}`}
-							src={`${uploadUrl}?preview=1&v=${linkUploadVersion}`}
+							src={iframeSrc}
 							width={toDomPrecision(shape.props.w)}
 							height={toDomPrecision(shape.props.h)}
 							draggable={false}
