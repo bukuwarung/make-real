@@ -1,68 +1,139 @@
-import { createResource } from '../../../lib/actions/resource';
-import { openai } from '@ai-sdk/openai';
-import { generateText, tool } from 'ai';
-import { z } from 'zod';
-import { findRelevantContent } from '../../../lib/ai/embedding';
-
-// Allow streaming responses up to 30 seconds
-export const maxDuration = 30;
+import { openai } from '@ai-sdk/openai'
+import { generateText, tool } from 'ai'
+import { NextResponse } from 'next/server'
+import { z } from 'zod'
+import { findRelevantContent } from '../../../lib/ai/embedding'
 
 export async function POST(req: Request) {
-  try {
-    console.info('Processing embedding query request');
-    const { messages } = await req.json();
-    
-    console.debug('Generating text with OpenAI', { messageCount: messages.length });
-    const result = generateText({
-      model: openai('gpt-4o'),
-      prompt: `I am designing a web page FAQ section. The structure includes:
-    1. A FAQSection as the main wrapper with the title 'Frequently Asked Questions' and a list of FAQ items.
-    2. FAQItem as the content of FAQSection, displaying a question as text, an answer as rich text, and metadata with tags and user info.
-    3. Tag for labels like 'Popular' or 'New' with customizable styles.
-    4. Avatar for user information, showing the user's profile picture with alt text.
-    5. Typography for styled text, supporting headings and paragraphs for questions and answers.
-    6. Card as the container for the FAQSection, providing a bordered box with a title.
-    
-    I want embedding vectors to represent this structure and components for building or searching relevant designs.`,
-      system: `You are a helpful assistant. Check your knowledge base before answering any questions.
-      Only respond to questions using information from tool calls.
-      if no relevant information is found in the tool calls, respond, "Sorry, I don't know."`,
-      tools: {
-        addResource: tool({
-          description: `add a resource to your knowledge base.
-            If the user provides a random piece of knowledge unprompted, use this tool without asking for confirmation.`,
-          parameters: z.object({
-            content: z
-              .string()
-              .describe('the content or resource to add to the knowledge base'),
-          }),
-          execute: async ({ content }) => {
-            console.debug('Adding resource to knowledge base', { contentLength: content?.length });
-            if (typeof content !== 'string') {
-              return createResource({ content });
-            }
-          },
-        }),
-        getInformation: tool({
-          description: `get information from your knowledge base to answer questions.`,
-          parameters: z.object({
-            question: z.string().describe('the users question'),
-          }),
-          execute: async ({ question }) => {
-            console.debug('Searching knowledge base', { question });
-            return findRelevantContent(question);
-          },
-        }),
-      },
-    });
+	try {
+		const formData = await req.formData()
+		// const prompt = formData.get('prompt');
+		const imageFile = formData.get('image')
 
-    const response = await result;
-    console.info('Successfully processed embedding query', response.responseMessages[0].content);
-    return response.responseMessages;
-  } catch (error) {
-    console.error('Error processing embedding query', { 
-      error: error instanceof Error ? error.message : 'Unknown error' 
-    });
-    throw error;
-  }
+		console.log(imageFile)
+
+		if (!imageFile || !(imageFile instanceof File)) {
+			throw new Error('Image file is required')
+		}
+
+		// Convert image file to base64 or buffer if needed
+		const imageBuffer = await imageFile.arrayBuffer()
+		const imageBase64 = Buffer.from(imageBuffer).toString('base64')
+
+		// Configure the AI response generation
+		const result = await generateText({
+			model: openai('gpt-4o-mini-2024-07-18'),
+			messages: [
+				{
+					role: 'system',
+					content: `You are a UI prototype analyzer that converts design descriptions into structured component hierarchies. 
+          For each component needed:
+          1. Identify the component type and its role
+          2. Use the findRelevantContent tool to find matching components
+          3. Create a structured hierarchy showing component relationships
+          4. Include properties and configurations needed for each component
+          
+          Return the results as a JSON structure with:
+          - components: An array of ComponentConfig objects, each with:
+            - component: The type of component to render
+            - props: An optional object containing properties for the component
+              - children: An optional array of nested ComponentConfig objects or a string
+
+          Example:
+          {
+            "components": [
+              {
+                "component": "Layout",
+                "props": {
+                  "children": [
+                    {
+                      "component": "Header",
+                      "props": {
+                        "title": "Welcome"
+                      }
+                    },
+                    {
+                      "component": "Content",
+                      "props": {
+                        "children": [
+                          {
+                            "component": "Text",
+                            "props": {
+                              "content": "This is a sample text."
+                            }
+                          },
+                          {
+                            "component": "Image",
+                            "props": {
+                              "src": "image-url.jpg"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }`,
+				},
+				{
+					role: 'user',
+					content: [
+						{
+							type: 'image',
+							image: imageBase64,
+						},
+					],
+				},
+			],
+			tools: {
+				findRelevantContent: tool({
+					description: 'Search for a specific type of component in the knowledge base',
+					parameters: z.object({
+						componentType: z.string().describe('The type of component to search for'),
+					}),
+					execute: async ({ componentType }) => {
+						const results = await findRelevantContent(componentType)
+						return JSON.stringify(results)
+					},
+				}),
+			},
+		})
+
+		// Process the AI response
+		const messages = result.responseMessages
+		const finalMessage = messages[messages.length - 1]
+
+		// Extract component search results
+		const componentResults = messages
+			.filter(
+				(msg) =>
+					msg.role === 'tool' &&
+					msg.content.find((content) => content.toolName === 'findRelevantContent')
+			)
+			.map((content) => content)
+			.flat()
+
+		// Parse and structure the final response
+		const results = finalMessage.content
+
+		return NextResponse.json({
+			// results,
+			components: componentResults
+				.map((content) =>
+					Array.isArray(content.content)
+						? content.content.map((c) => JSON.parse(c.result))
+						: []
+				)
+				.flat()
+				.flat(),
+		})
+	} catch (error) {
+		console.error('Error analyzing prototype:', error)
+		return NextResponse.json(
+			{ error: error instanceof Error ? error.message : 'Unknown error' },
+			{ status: 500 }
+		)
+	}
 }

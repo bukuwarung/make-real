@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
 				console.log(`Generated embedding for component: ${component.name}`)
 
 				return {
-					content: component,
+					content: JSON.stringify(component),
 					embedding: embeddingResponse.embedding,
 				}
 			})
