@@ -6,16 +6,16 @@ export const maxDuration = 120
 
 import dynamic from 'next/dynamic'
 import 'tldraw/tldraw.css'
-import { MakeRealButton } from '../components/MakeRealButton'
-import { PreviewShapeUtil } from '../PreviewShape/PreviewShape'
+import { MakeRealButton } from './components/MakeRealButton'
+import { PreviewShapeUtil } from './PreviewShape/PreviewShape'
 
 import { useEffect } from 'react'
 import { debugEnableLicensing, DefaultMainMenu, DefaultMainMenuContent, useDialogs } from 'tldraw'
-import { CustomTopPanel } from '../components/CustomTopPanel'
-import { Links } from '../components/Links'
-import { SettingsDialog } from '../components/SettingsDialog'
-import { applySettingsMigrations, makeRealSettings, PROVIDERS } from '../lib/settings'
-import { WebEditorFrameShapeUtil } from '../WebEditorFrameShape/WebEditorFrameShape'
+import { CustomTopPanel } from './components/CustomTopPanel'
+import { Links } from './components/Links'
+import { SettingsDialog } from './components/SettingsDialog'
+import { applySettingsMigrations, makeRealSettings, PROVIDERS } from './lib/settings'
+import { WebEditorFrameShapeUtil } from './WebEditorFrameShape/WebEditorFrameShape'
 
 debugEnableLicensing()
 

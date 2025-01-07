@@ -6,9 +6,9 @@ export const maxDuration = 120
 
 import dynamic from 'next/dynamic'
 import 'tldraw/tldraw.css'
-import { PreviewShapeUtil } from '../../PreviewShape/PreviewShape'
+import { PreviewShapeUtil } from '../PreviewShape/PreviewShape'
 import '../../Slides/slides.css'
-import { MakeRealButton } from '../../components/MakeRealButton'
+import { MakeRealButton } from '../components/MakeRealButton'
 
 import { useEffect } from 'react'
 import {
@@ -19,12 +19,12 @@ import {
 	computed,
 	debugEnableLicensing,
 } from 'tldraw'
-import { SlideShapeTool } from '../../Slides/SlideShapeTool'
-import { SlideShapeUtil } from '../../Slides/SlideShapeUtil'
-import { SlidesPanel } from '../../Slides/SlidesPanel'
-import { $currentSlide, getSlides, moveToSlide } from '../../Slides/useSlides'
-import { Links } from '../../components/Links'
-import { makeRealSettings } from '../../lib/settings'
+import { SlideShapeTool } from '../Slides/SlideShapeTool'
+import { SlideShapeUtil } from '../Slides/SlideShapeUtil'
+import { SlidesPanel } from '../Slides/SlidesPanel'
+import { $currentSlide, getSlides, moveToSlide } from '../Slides/useSlides'
+import { Links } from '../components/Links'
+import { makeRealSettings } from '../lib/settings'
 
 debugEnableLicensing()
 
