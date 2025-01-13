@@ -1,13 +1,13 @@
 import { openai } from '@ai-sdk/openai'
 import { embed, embedMany } from 'ai'
 import { sql } from 'drizzle-orm'
-import { cosineDistance, desc, gt } from 'drizzle-orm/sql'
+import { cosineDistance, desc, gt, gte } from 'drizzle-orm/sql'
 import fs from 'fs'
 import path from 'path'
 import { db } from '../db/init'
 import { embeddings } from '../db/schema/embeddings'
 
-const embeddingModel = openai.embedding('text-embedding-ada-002')
+const embeddingModel = openai.embedding('text-embedding-3-small')
 
 const getJson = () => {
 	const json = fs.readFileSync(path.join(__dirname, 'data.json'), 'utf8')
@@ -51,7 +51,7 @@ export const findRelevantContent = async (userQuery: string) => {
 			similarity,
 		})
 		.from(embeddings)
-		.where(gt(similarity, 0.3))
+		.where(gt(similarity, 0.9))
 		.orderBy(desc(similarity))
 		.limit(10)
 

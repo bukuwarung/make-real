@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
 				console.log(`Processing component: ${component.name}`)
 				// Get embedding for component description
 				const embeddingResponse = await generateEmbedding(
-					component.description || '',
+					component.name || '',
 					JSON.stringify(component)
 				)
 				console.log(`Generated embedding for component: ${component.name}`)

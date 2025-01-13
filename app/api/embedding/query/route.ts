@@ -28,10 +28,11 @@ export async function POST(req: Request) {
 					role: 'system',
 					content: `You are a UI prototype analyzer that converts design descriptions into structured component hierarchies. 
           For each component needed:
-          1. Identify the component type and its role
-          2. Use the findRelevantContent tool to find matching components
-          3. Create a structured hierarchy showing component relationships
-          4. Include properties and configurations needed for each component
+          1. Identify the component type and its role. Please use antd design system as reference.
+          2. Layout is build with Grid Row and Col.
+          3. Use the findRelevantContent tool to find matching components
+          4. Create a structured hierarchy showing component relationships
+          5. Include properties and configurations needed for each component
           
           Return the results as a JSON structure with:
           - components: An array of ComponentConfig objects, each with:
@@ -94,6 +95,7 @@ export async function POST(req: Request) {
 						componentType: z.string().describe('The type of component to search for'),
 					}),
 					execute: async ({ componentType }) => {
+						console.log('componentType', componentType)
 						const results = await findRelevantContent(componentType)
 						return JSON.stringify(results)
 					},
@@ -115,11 +117,13 @@ export async function POST(req: Request) {
 			.map((content) => content)
 			.flat()
 
+		// console.log('final', finalMessage)
+
 		// Parse and structure the final response
 		const results = finalMessage.content
 
 		return NextResponse.json({
-			// results,
+			results,
 			components: componentResults
 				.map((content) =>
 					Array.isArray(content.content)
