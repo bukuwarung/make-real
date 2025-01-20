@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai'
-import { embed, embedMany } from 'ai'
+import { cosineSimilarity, embed, embedMany } from 'ai'
 import { sql } from 'drizzle-orm'
 import { cosineDistance, desc, gt, gte } from 'drizzle-orm/sql'
 import fs from 'fs'
@@ -48,20 +48,29 @@ export const findRelevantContent = async (userQuery: string) => {
 	const results = await db
 		.select({
 			content: embeddings.content,
-			similarity,
+			embedding: embeddings.embedding,
+			similarity: similarity,
 		})
 		.from(embeddings)
-		.where(gt(similarity, 0.9))
+		.where(gt(similarity, 0.7))
 		.orderBy(desc(similarity))
 		.limit(10)
+
+	const context = results.map((result) => ({
+		document: result.content,
+		similarity: cosineSimilarity(embedding, result.embedding),
+	})).filter((c) => c.similarity > 0.8)
+
+	console.log('context', userQuery, context)
+	console.log('results', results)
 
 	// Parse and return the results
 	return results.map((result) => {
 		const component = JSON.parse(result.content)
-		console.log({
-			name: component.name,
-			similarity: result.similarity,
-		})
+		// console.log({
+		// 	name: component.name,
+		// 	similarity: result.similarity,
+		// })
 		return {
 			name: component.name,
 			description: component.description,

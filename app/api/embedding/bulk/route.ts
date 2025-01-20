@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { generateEmbedding } from '../../../lib/ai/embedding'
 import { db } from '../../../lib/db/init'
-import { insertResourceSchema, resources } from '../../../lib/db/schema/resources'
-import { embeddings as embeddingsTable } from '../../../lib/db/schema/embeddings';
+import { embeddings as embeddingsTable } from '../../../lib/db/schema/embeddings'
+import { resources } from '../../../lib/db/schema/resources'
 
 interface Component {
 	name: string
@@ -11,10 +11,35 @@ interface Component {
 	componentTypeName?: string
 }
 
+const MAX_CHUNK_LENGTH = 1000 // Maximum characters per chunk
+
+function chunkText(text: string, maxLength: number): string[] {
+	if (text.length <= maxLength) return [text]
+
+	const chunks: string[] = []
+	let currentIndex = 0
+
+	while (currentIndex < text.length) {
+		// Find a good breaking point (end of sentence or space)
+		let endIndex = Math.min(currentIndex + maxLength, text.length)
+		if (endIndex < text.length) {
+			const lastPeriod = text.lastIndexOf('.', endIndex)
+			const lastSpace = text.lastIndexOf(' ', endIndex)
+			endIndex =
+				lastPeriod > currentIndex ? lastPeriod + 1 : lastSpace > currentIndex ? lastSpace : endIndex
+		}
+
+		chunks.push(text.slice(currentIndex, endIndex).trim())
+		currentIndex = endIndex
+	}
+
+	return chunks
+}
+
 export async function POST(req: NextRequest) {
 	try {
 		console.log('Starting bulk embedding process', req)
-		
+
 		// Parse the incoming JSON
 		const schema = await req.json()
 		console.log(`Received schema with ${schema.components?.length || 0} components`)
@@ -30,19 +55,41 @@ export async function POST(req: NextRequest) {
 		console.log('Generating embeddings for components in parallel...')
 		// Process each component in parallel
 		const processedComponents = await Promise.all(
-			schema.components.map(async (component: Component) => {
+			schema.components.flatMap(async (component: Component) => {
 				console.log(`Processing component: ${component.name}`)
-				// Get embedding for component description
-				const embeddingResponse = await generateEmbedding(
-					component.name || '',
-					JSON.stringify(component)
-				)
-				console.log(`Generated embedding for component: ${component.name}`)
+				const description = component.description || ''
+				const chunks = chunkText(description, MAX_CHUNK_LENGTH)
 
-				return {
-					content: JSON.stringify(component),
-					embedding: embeddingResponse.embedding,
-				}
+				return Promise.all(
+					chunks.map(async (chunk, index) => {
+						const content = JSON.stringify({
+							...component,
+							chunkIndex: index,
+							totalChunks: chunks.length,
+						})
+
+						const embeddingResponse = await generateEmbedding(chunk, content)
+						console.log(
+							`Generated embedding for component: ${component.name} (chunk ${index + 1}/${
+								chunks.length
+							})`
+						)
+
+						// Add validation to ensure we have both content and embedding
+						if (!embeddingResponse?.embedding) {
+							throw new Error(`Failed to generate embedding for component: ${component.name}`)
+						}
+
+						if (!content) {
+							throw new Error(`Failed to stringify content for component: ${component.name}`)
+						}
+
+						return {
+							content: content,
+							embedding: embeddingResponse.embedding,
+						}
+					})
+				)
 			})
 		)
 		console.log(`Successfully processed ${processedComponents.length} components`)
@@ -56,16 +103,19 @@ export async function POST(req: NextRequest) {
 		// }
 
 		console.log('Inserting resource into database')
-		const [resource] = await db.insert(resources).values({ content: JSON.stringify(schema) }).returning()
+		const [resource] = await db
+			.insert(resources)
+			.values({ content: JSON.stringify(schema) })
+			.returning()
 		console.log(`Created resource with ID: ${resource.id}`)
 
 		console.log('Inserting embeddings into database')
-        await db.insert(embeddingsTable).values(
-            processedComponents.map(embedding => ({
-              resourceId: resource.id,
-              ...embedding,
-            })),
-          );
+		await db.insert(embeddingsTable).values(
+			processedComponents.flat().map((embedding) => ({
+				resourceId: resource.id,
+				...embedding,
+			}))
+		)
 		console.log(`Successfully stored ${processedComponents.length} embeddings`)
 
 		return NextResponse.json({

@@ -1,16 +1,23 @@
-import { openai } from '@ai-sdk/openai'
+import { createOpenAI } from '@ai-sdk/openai'
 import { generateText, tool } from 'ai'
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { findRelevantContent } from '../../../lib/ai/embedding'
 
 export async function POST(req: Request) {
+	const openai = createOpenAI({
+		// example fetch wrapper that logs the input to the API call:
+		fetch: async (url, options) => {
+			console.log('URL', url)
+			// console.log(`Body ${JSON.stringify(JSON.parse(options!.body! as string), null, 2)}`)
+			return await fetch(url, options)
+		},
+	})
+
 	try {
 		const formData = await req.formData()
 		// const prompt = formData.get('prompt');
 		const imageFile = formData.get('image')
-
-		console.log(imageFile)
 
 		if (!imageFile || !(imageFile instanceof File)) {
 			throw new Error('Image file is required')
@@ -22,61 +29,16 @@ export async function POST(req: Request) {
 
 		// Configure the AI response generation
 		const result = await generateText({
-			model: openai('gpt-4o-mini-2024-07-18'),
+			// model: openai('gpt-4o-mini-2024-07-18'),
+			model: openai('gpt-4o'),
 			messages: [
 				{
 					role: 'system',
-					content: `You are a UI prototype analyzer that converts design descriptions into structured component hierarchies. 
-          For each component needed:
-          1. Identify the component type and its role. Please use antd design system as reference.
-          2. Layout is build with Grid Row and Col.
-          3. Use the findRelevantContent tool to find matching components
-          4. Create a structured hierarchy showing component relationships
-          5. Include properties and configurations needed for each component
-          
-          Return the results as a JSON structure with:
-          - components: An array of ComponentConfig objects, each with:
-            - component: The type of component to render
-            - props: An optional object containing properties for the component
-              - children: An optional array of nested ComponentConfig objects or a string
-
-          Example:
-          {
-            "components": [
-              {
-                "component": "Layout",
-                "props": {
-                  "children": [
-                    {
-                      "component": "Header",
-                      "props": {
-                        "title": "Welcome"
-                      }
-                    },
-                    {
-                      "component": "Content",
-                      "props": {
-                        "children": [
-                          {
-                            "component": "Text",
-                            "props": {
-                              "content": "This is a sample text."
-                            }
-                          },
-                          {
-                            "component": "Image",
-                            "props": {
-                              "src": "image-url.jpg"
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }`,
+					content: `You are a web component analyzer. You are given an image and you need to find the component and the properties needed to build a layout for the following image. use the tools to find the component.`,
+				},
+				{
+					role: 'user',
+					content: `What is the component and the properties needed to build a layout for the following image?`,
 				},
 				{
 					role: 'user',
@@ -89,14 +51,16 @@ export async function POST(req: Request) {
 				},
 			],
 			tools: {
-				findRelevantContent: tool({
-					description: 'Search for a specific type of component in the knowledge base',
+				findComponent: tool({
+					description: 'Search for a specific component in the knowledge base',
 					parameters: z.object({
-						componentType: z.string().describe('The type of component to search for'),
+						componentDescription: z
+							.string()
+							.describe('The description of the component to search for'),
 					}),
-					execute: async ({ componentType }) => {
-						console.log('componentType', componentType)
-						const results = await findRelevantContent(componentType)
+					execute: async ({ componentDescription }) => {
+						console.log('componentDescription', componentDescription)
+						const results = await findRelevantContent(componentDescription)
 						return JSON.stringify(results)
 					},
 				}),
@@ -107,17 +71,25 @@ export async function POST(req: Request) {
 		const messages = result.responseMessages
 		const finalMessage = messages[messages.length - 1]
 
+		console.log('messages', messages)
+
+		// Log token usage if available
+		if (result.usage) {
+			console.log('Token Usage:', {
+				promptTokens: result.usage.promptTokens,
+				completionTokens: result.usage.completionTokens,
+				totalTokens: result.usage.totalTokens,
+			})
+		}
+
 		// Extract component search results
 		const componentResults = messages
 			.filter(
 				(msg) =>
-					msg.role === 'tool' &&
-					msg.content.find((content) => content.toolName === 'findRelevantContent')
+					msg.role === 'tool' && msg.content.find((content) => content.toolName === 'findComponent')
 			)
 			.map((content) => content)
 			.flat()
-
-		// console.log('final', finalMessage)
 
 		// Parse and structure the final response
 		const results = finalMessage.content
@@ -126,9 +98,7 @@ export async function POST(req: Request) {
 			results,
 			components: componentResults
 				.map((content) =>
-					Array.isArray(content.content)
-						? content.content.map((c) => JSON.parse(c.result))
-						: []
+					Array.isArray(content.content) ? content.content.map((c) => JSON.parse(c.result)) : []
 				)
 				.flat()
 				.flat(),
